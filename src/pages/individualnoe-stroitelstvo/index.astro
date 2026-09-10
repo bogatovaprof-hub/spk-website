@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import pages from '../../data/pages.json';
+
+const page = pages.individual;
+---
+
+<BaseLayout title={`${page.h1} — СПК ТРЕЙД`} description={page.description}>
+  <InnerHero title={page.h1} description={page.description} image={page.image} />
+  <CallToAction heading={page.secondaryHeading} text={page.secondaryText} primaryLabel={page.primaryCta} secondaryLabel={page.secondaryCta} />
+</BaseLayout>
+

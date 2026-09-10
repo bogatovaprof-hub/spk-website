@@ -1,0 +1,28 @@
+---
+import home from '../data/home.json';
+import { iconUrl, imageUrl } from '../lib/urls';
+import DemoForm from './DemoForm.astro';
+---
+
+<section class="lead-section container" aria-labelledby="lead-title">
+  <div class="lead-panel">
+    <div class="lead-copy">
+      <h2 id="lead-title">{home.lead.heading}</h2>
+      <p>{home.lead.description}</p>
+      <DemoForm formId="home-lead" variant="compact" includeFiles visuallyHiddenLabels submitLabel={home.lead.submit} />
+    </div>
+    <picture class="lead-image">
+      <source srcset={imageUrl(home.lead.image)} type="image/webp" />
+      <img src={imageUrl(home.lead.image, 'png')} width="424" height="262" alt="Два инженера изучают чертёж" loading="lazy" />
+    </picture>
+    <ul class="benefits-list">
+      {home.lead.benefits.map((benefit) => (
+        <li>
+          <img src={iconUrl(benefit.icon)} width="52" height="54" alt="" loading="lazy" />
+          <span>{benefit.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+

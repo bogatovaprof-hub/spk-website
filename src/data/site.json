@@ -1,0 +1,116 @@
+{
+  "name": "СПК ТРЕЙД",
+  "wordmark": "SPK",
+  "language": "ru",
+  "prototype": true,
+  "noindex": true,
+  "desiredDomainFromClient": "spk-traid.ru",
+  "desiredDomainOrigin": "client-document line 13",
+  "connectDomainNow": false,
+  "contacts": {
+    "phoneDisplay": "+7 (000) 000-00-00",
+    "phoneHref": null,
+    "phoneConfirmed": false,
+    "emailDisplay": "info@spk-trade.ru",
+    "emailHref": null,
+    "emailConfirmed": false,
+    "emailOrigin": "approved-image",
+    "emailDomainMismatch": true,
+    "address": null,
+    "hours": null,
+    "legalName": null,
+    "inn": null,
+    "ogrn": null,
+    "note": "Не включать tel/mailto до подтверждения. В картинке spk-trade.ru, в документе spk-traid.ru. Не исправлять молча и не придумывать почту."
+  },
+  "nav": [
+    {
+      "title": "Главная",
+      "href": "/"
+    },
+    {
+      "title": "Услуги",
+      "href": "/services/"
+    },
+    {
+      "title": "О нас",
+      "href": "/about/"
+    },
+    {
+      "title": "Проекты",
+      "href": "/projects/"
+    },
+    {
+      "title": "Вопросы",
+      "href": "/faq/"
+    },
+    {
+      "title": "Контакты",
+      "href": "/contacts/"
+    }
+  ],
+  "headerCta": {
+    "text": "Оставить заявку",
+    "href": "/request/"
+  },
+  "footer": {
+    "slogan": "Строим надежную основу для промышленного бизнеса",
+    "links": [
+      {
+        "title": "Политика конфиденциальности",
+        "href": "/privacy/"
+      },
+      {
+        "title": "Карта сайта",
+        "href": "/sitemap/"
+      }
+    ]
+  },
+  "ui": {
+    "back": "Назад",
+    "home": "Главная",
+    "breadcrumbsLabel": "Навигационная цепочка",
+    "menuOpen": "Открыть меню",
+    "menuClose": "Закрыть меню",
+    "skipLink": "Перейти к содержанию",
+    "dialogClose": "Закрыть окно",
+    "removeFile": "Удалить файл",
+    "previousPage": "Вернуться на главную",
+    "demoSubmit": "Проверка выполнена. Это прототип: заявка и файлы не отправлены.",
+    "formInvalid": "Проверьте отмеченные поля.",
+    "nameError": "Укажите имя.",
+    "phoneError": "Укажите телефон для связи.",
+    "emailError": "Проверьте адрес электронной почты.",
+    "fileTypeError": "Этот формат файла не поддерживается в прототипе.",
+    "fileSizeError": "Размер одного файла не должен превышать 20 МБ.",
+    "fileCountError": "Можно выбрать не более 10 файлов.",
+    "fileTotalError": "Общий размер выбранных файлов не должен превышать 50 МБ.",
+    "noJsForm": "В прототипе проверка формы доступна при включенном JavaScript. Данные не отправляются.",
+    "contactUnconfirmed": "Контактные данные для публикации не подтверждены.",
+    "draftContent": "Содержание этой страницы уточняется.",
+    "origin": "prototype-ui-new-text"
+  },
+  "formPolicy": {
+    "mode": "local-demo",
+    "maxFiles": 10,
+    "maxFileBytes": 20971520,
+    "maxTotalBytes": 52428800,
+    "extensions": [
+      "pdf",
+      "png",
+      "jpg",
+      "jpeg",
+      "webp",
+      "doc",
+      "docx",
+      "xls",
+      "xlsx",
+      "dwg",
+      "dxf"
+    ],
+    "persistData": false,
+    "networkRequestsOnSubmit": false,
+    "readFileBytes": false,
+    "origin": "proposed-prototype-UX-not-client-policy"
+  }
+}

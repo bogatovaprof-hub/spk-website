@@ -1,0 +1,78 @@
+{
+  "request": {
+    "h1": "Рассчитаем стоимость работ по вашему проекту",
+    "description": "Отправьте техническое задание, чертежи или ведомость объемов. Специалист изучит материалы, уточнит необходимые данные и подготовит предложение.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Имя",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "company",
+        "label": "Компания",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "phone",
+        "label": "Телефон",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "name": "email",
+        "label": "Электронная почта",
+        "type": "email",
+        "required": false
+      },
+      {
+        "name": "service",
+        "label": "Вид работ",
+        "type": "select",
+        "required": false
+      },
+      {
+        "name": "message",
+        "label": "Краткое описание задачи",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "name": "files",
+        "label": "Прикрепить файлы",
+        "type": "file",
+        "required": false
+      }
+    ],
+    "servicePlaceholder": "Выберите вид работ",
+    "serviceExtraOptions": [
+      "Индивидуальное строительство",
+      "Строительство АПК",
+      "Другая задача"
+    ],
+    "submit": "Отправить проект на расчет",
+    "origin": "client-document lines 123–135; submit from approved-image; requiredness and option placeholder are prototype UX"
+  },
+  "consultation": {
+    "heading": "Заказать консультацию по телефону",
+    "description": "Оставьте имя и телефон для обсуждения задачи.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Ваше имя",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "phone",
+        "label": "Телефон",
+        "type": "tel",
+        "required": true
+      }
+    ],
+    "submit": "Заказать звонок",
+    "origin": "client-document line 120; description and field UI proposed for prototype"
+  }
+}

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import about from '../../data/about.json';
+---
+
+<BaseLayout title="О компании — СПК ТРЕЙД" description={about.intro} activeSection="about">
+  <InnerHero title={about.h1} description={about.intro} image={about.image} />
+  <section class="container content-section two-column-content">
+    <div class="prose">
+      <h2>О работе компании</h2>
+      {about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <p><strong>{about.consultation}</strong></p>
+    </div>
+    <aside class="info-card">
+      <h2>Основания и преимущества</h2>
+      <ul class="plain-list">{about.facts.map((fact) => <li>{fact}</li>)}</ul>
+    </aside>
+  </section>
+  <section class="container content-section prose">
+    <h2>Наш подход</h2>
+    <ul>{about.advantages.map((advantage) => <li>{advantage}</li>)}</ul>
+  </section>
+  <CallToAction />
+</BaseLayout>
+

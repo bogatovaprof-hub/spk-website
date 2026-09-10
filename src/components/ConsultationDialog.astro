@@ -1,0 +1,43 @@
+---
+import site from '../data/site.json';
+import DemoForm from './DemoForm.astro';
+---
+
+<dialog class="consultation-dialog" data-consultation-dialog aria-labelledby="consultation-title">
+  <div class="dialog-card">
+    <button class="dialog-close" type="button" data-dialog-close aria-label={site.ui.dialogClose}>×</button>
+    <p class="eyebrow">СПК ТРЕЙД</p>
+    <h2 id="consultation-title">Заказать консультацию по телефону</h2>
+    <p>Оставьте имя и телефон для обсуждения задачи.</p>
+    <DemoForm formId="consultation" variant="consultation" submitLabel="Заказать звонок" />
+  </div>
+</dialog>
+
+<script is:inline>
+  const dialog = document.querySelector('[data-consultation-dialog]');
+  let opener = null;
+
+  if (dialog instanceof HTMLDialogElement) {
+    const close = () => {
+      dialog.close();
+      if (opener instanceof HTMLElement) opener.focus();
+    };
+
+    document.querySelectorAll('[data-dialog-open]').forEach((button) => {
+      button.addEventListener('click', () => {
+        opener = button;
+        dialog.showModal();
+        dialog.querySelector('input')?.focus();
+      });
+    });
+
+    dialog.querySelector('[data-dialog-close]')?.addEventListener('click', close);
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) close();
+    });
+    dialog.addEventListener('close', () => {
+      if (opener instanceof HTMLElement) opener.focus();
+    });
+
+  }
+</script>

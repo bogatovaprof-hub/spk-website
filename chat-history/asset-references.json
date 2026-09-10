@@ -1,0 +1,178 @@
+[
+  {
+    "messageId": "06b1f602-3f24-4e1f-9ffc-475ec4bdff41",
+    "role": "user",
+    "fileId": "file_0000000044ec821182824e1f469febe1",
+    "assetPointer": null,
+    "name": "СПК сайт.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "size": 1362760,
+    "width": null,
+    "height": null
+  },
+  {
+    "messageId": "f7fe0e26-81ba-43b4-b42c-077d208946ac",
+    "role": "assistant",
+    "fileId": "file_0000000044ec821182824e1f469febe1",
+    "assetPointer": null,
+    "name": "СПК сайт.docx",
+    "mimeType": null,
+    "size": null,
+    "width": null,
+    "height": null
+  },
+  {
+    "messageId": "e678c66f-8603-49bd-a4ca-3b5d91a786d4",
+    "role": "tool",
+    "fileId": null,
+    "assetPointer": "sediment://file_00000000b2cc8206a6e9122d2cbb8ecb?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": "image/png",
+    "size": 2122660,
+    "width": 1312,
+    "height": 1199
+  },
+  {
+    "messageId": "1f42d4a3-3507-491a-831a-86cff3c7acb0",
+    "role": "tool",
+    "fileId": null,
+    "assetPointer": "sediment://file_000000007c10821197f9c4ceaa91006b?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": "image/png",
+    "size": 2375439,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "messageId": "e0320685-3b0b-4395-9f29-18c98a01ab20",
+    "role": "tool",
+    "fileId": null,
+    "assetPointer": "sediment://file_00000000c7fc8211be6d2d55130f4ffb?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": "image/png",
+    "size": 2349089,
+    "width": 1312,
+    "height": 1199
+  },
+  {
+    "messageId": "8b11983c-61b3-451d-83e3-bd39405c003e",
+    "role": "user",
+    "fileId": null,
+    "assetPointer": "sediment://file_000000005a4482079744aad0feb0f1f4?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": null,
+    "size": 1363307,
+    "width": 909,
+    "height": 1920
+  },
+  {
+    "messageId": "8b11983c-61b3-451d-83e3-bd39405c003e",
+    "role": "user",
+    "fileId": "file_000000005a4482079744aad0feb0f1f4",
+    "assetPointer": null,
+    "name": "4a971a31-3b42-448d-ac39-88e171a07f80.png",
+    "mimeType": "image/png",
+    "size": 1363307,
+    "width": 909,
+    "height": 1920
+  },
+  {
+    "messageId": "689d4681-bfe9-47e2-be44-9841d910956d",
+    "role": "user",
+    "fileId": null,
+    "assetPointer": "sediment://file_0000000052588207b5d0969cc51c5b03?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": null,
+    "size": 1352667,
+    "width": 811,
+    "height": 928
+  },
+  {
+    "messageId": "689d4681-bfe9-47e2-be44-9841d910956d",
+    "role": "user",
+    "fileId": "file_0000000052588207b5d0969cc51c5b03",
+    "assetPointer": null,
+    "name": "10fa2720-d2f4-4040-90db-0c9af60d6117.png",
+    "mimeType": "image/png",
+    "size": 1352667,
+    "width": 811,
+    "height": 928
+  },
+  {
+    "messageId": "b645c89d-a325-4c26-bc74-870b6b829967",
+    "role": "tool",
+    "fileId": null,
+    "assetPointer": "sediment://file_000000005fd88208a1ac8f789ca3d7a5?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": "image/png",
+    "size": 2233418,
+    "width": 1086,
+    "height": 1448
+  },
+  {
+    "messageId": "c8fa63fa-290b-4108-b37a-f3531a36b1b9",
+    "role": "tool",
+    "fileId": null,
+    "assetPointer": "sediment://file_000000005fd88208a1ac8f789ca3d7a5?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": "image/png",
+    "size": 2233418,
+    "width": 1086,
+    "height": 1448
+  },
+  {
+    "messageId": "8117c1e3-c520-4162-b22e-7475996e9a8c",
+    "role": "tool",
+    "fileId": null,
+    "assetPointer": "sediment://file_00000000a4fc8211b68c1b8ebc3863da?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": "image/png",
+    "size": 2184340,
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "messageId": "48c3e6bd-2836-406c-ae08-6eb963b28393",
+    "role": "tool",
+    "fileId": null,
+    "assetPointer": "sediment://file_00000000a4fc8211b68c1b8ebc3863da?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": "image/png",
+    "size": 2184340,
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "messageId": "7503ce34-9ea4-44d8-a6c4-d8b8bc4c73ee",
+    "role": "user",
+    "fileId": null,
+    "assetPointer": "sediment://file_000000001114821189f4b071fde2da1b?shared_conversation_id=6aa26b99-927c-83ed-b0a0-1e03be7f614f",
+    "name": null,
+    "mimeType": null,
+    "size": 2184340,
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "messageId": "7503ce34-9ea4-44d8-a6c4-d8b8bc4c73ee",
+    "role": "user",
+    "fileId": "file_000000001114821189f4b071fde2da1b",
+    "assetPointer": null,
+    "name": "Референс СПК.png",
+    "mimeType": "image/png",
+    "size": 2184340,
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "messageId": "c0518650-518c-4db9-9d34-98699b8ce4f0",
+    "role": "assistant",
+    "fileId": "file_0000000044ec821182824e1f469febe1",
+    "assetPointer": null,
+    "name": "СПК сайт.docx",
+    "mimeType": null,
+    "size": null,
+    "width": null,
+    "height": null
+  }
+]

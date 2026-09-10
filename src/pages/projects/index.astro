@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import pages from '../../data/pages.json';
+
+const page = pages.projects;
+---
+
+<BaseLayout title="Проекты — СПК ТРЕЙД" description={page.emptyText} activeSection="projects">
+  <InnerHero title={page.h1} />
+  <section class="container content-section">
+    <div class="empty-state">
+      <h2>{page.emptyHeading}</h2>
+      <p>{page.emptyText}</p>
+      <button class="button button-primary" type="button" data-dialog-open>{page.primaryCta}</button>
+    </div>
+  </section>
+</BaseLayout>
+

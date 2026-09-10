@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/pages.json';
+import { withBase } from '../lib/urls';
+
+const page = pages.notFound;
+---
+
+<BaseLayout title="Страница не найдена — СПК ТРЕЙД" description={page.description}>
+  <section class="container not-found">
+    <div>
+      <p class="eyebrow">404</p>
+      <h1>{page.h1}</h1>
+      <p>{page.description}</p>
+      <a class="button button-primary" href={withBase('/')}>{page.cta}</a>
+    </div>
+  </section>
+</BaseLayout>

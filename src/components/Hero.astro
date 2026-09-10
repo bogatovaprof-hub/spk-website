@@ -1,0 +1,26 @@
+---
+import home from '../data/home.json';
+import { imageUrl, withBase } from '../lib/urls';
+---
+
+<section class="hero" aria-labelledby="home-title">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">{home.hero.eyebrow}</p>
+      <h1 id="home-title">{home.hero.title}</h1>
+      <p class="hero-subtitle">{home.hero.subtitle}</p>
+      <p class="hero-description">{home.hero.description}</p>
+      <div class="button-row">
+        <a class="button button-primary" href={withBase(home.hero.primaryHref)}>{home.hero.primaryCta}</a>
+        <button class="button button-secondary" type="button" data-dialog-open>{home.hero.secondaryCta}</button>
+      </div>
+    </div>
+    <div class="hero-image" aria-hidden="true">
+      <picture>
+        <source srcset={imageUrl(home.hero.image)} type="image/webp" />
+        <img src={imageUrl(home.hero.image, 'png')} width="645" height="369" alt="" />
+      </picture>
+    </div>
+  </div>
+</section>
+

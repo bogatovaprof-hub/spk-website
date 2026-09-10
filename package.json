@@ -1,0 +1,26 @@
+{
+  "name": "spk-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ./tools/run-astro.mjs dev",
+    "check": "node ./tools/run-astro.mjs check",
+    "build": "node ./tools/run-astro.mjs build",
+    "preview": "node ./tools/run-astro.mjs preview",
+    "test:smoke": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource-variable/roboto": "5.3.0",
+    "astro": "7.3.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.13.4",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

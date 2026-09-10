@@ -1,0 +1,28 @@
+---
+import { withBase } from '../lib/urls';
+
+interface Props {
+  heading?: string;
+  text?: string;
+  primaryLabel?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  heading = 'Обсудим ваш проект?',
+  text = 'Опишите задачу и приложите имеющиеся материалы.',
+  primaryLabel = 'Отправить проект на расчет',
+  secondaryLabel = 'Обсудить задачу'
+} = Astro.props;
+---
+
+<section class="container inner-cta" aria-labelledby="inner-cta-title">
+  <div>
+    <h2 id="inner-cta-title">{heading}</h2>
+    <p>{text}</p>
+  </div>
+  <div class="button-row">
+    <a class="button button-primary" href={withBase('/request/')}>{primaryLabel}</a>
+    <button class="button button-secondary" type="button" data-dialog-open>{secondaryLabel}</button>
+  </div>
+</section>

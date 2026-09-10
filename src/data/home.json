@@ -1,0 +1,150 @@
+{
+  "origin": "approved-image",
+  "copyLocked": true,
+  "seoTitle": "Промышленное строительство и монтаж металлоконструкций — СПК ТРЕЙД",
+  "seoDescription": "Комплекс работ для производственных, складских и коммерческих объектов — от проектирования до ввода в эксплуатацию.",
+  "hero": {
+    "eyebrow": "СТРОИТЕЛЬНАЯ КОМПАНИЯ",
+    "title": "Промышленное строительство",
+    "titleDesktopLines": [
+      "Промышленное",
+      "строительство"
+    ],
+    "subtitle": "Строим надежную основу для промышленного бизнеса",
+    "subtitleDesktopLines": [
+      "Строим надежную основу",
+      "для промышленного бизнеса"
+    ],
+    "description": "Комплекс работ для производственных, складских и коммерческих объектов — от проектирования до ввода в эксплуатацию.",
+    "primaryCta": "Отправить проект на расчет",
+    "primaryHref": "/request/",
+    "secondaryCta": "Обсудить задачу",
+    "secondaryAction": "open-consultation-dialog",
+    "image": "hero-industrial-right",
+    "imageEmbeddedText": [
+      "SPK",
+      "СПК ТРЕЙД",
+      "БОЛЬШИЕ ПРОЕКТЫ СОЗДАЮТ БУДУЩЕЕ"
+    ]
+  },
+  "facts": [
+    {
+      "value": "35+",
+      "label": "лет на рынке",
+      "icon": "icon-hardhat"
+    },
+    {
+      "value": "20 лет",
+      "label": "работаем командой",
+      "icon": "icon-team"
+    },
+    {
+      "value": "Свое",
+      "label": "оборудование\nи склад",
+      "icon": "icon-equipment"
+    },
+    {
+      "value": "Проекты",
+      "label": "по всей России\nи СНГ",
+      "icon": "icon-location"
+    }
+  ],
+  "servicesHeading": "Наши услуги",
+  "servicesAllLabel": "Все услуги",
+  "servicesAllHref": "/services/",
+  "cards": [
+    {
+      "title": "Промышленное строительство",
+      "image": "service-industrial",
+      "href": "/services/promyshlennoe-stroitelstvo/"
+    },
+    {
+      "title": "Проектирование",
+      "image": "service-design",
+      "href": "/services/proektirovanie/"
+    },
+    {
+      "title": "Металлоконструкции",
+      "image": "service-metal",
+      "href": "/services/metallokonstruktsii/"
+    },
+    {
+      "title": "Промышленные и полимерные полы",
+      "image": "service-floors",
+      "href": "/services/promyshlennye-poly/",
+      "note": "На странице бетонных полов предусмотреть заметную ссылку на /services/polimernye-poly/."
+    },
+    {
+      "title": "Монолитные железобетонные работы",
+      "image": "service-monolith",
+      "href": "/services/monolitnye-raboty/"
+    },
+    {
+      "title": "Устройство фасадов",
+      "image": "service-facades",
+      "href": "/services/fasady/"
+    },
+    {
+      "title": "Сэндвич-панели",
+      "image": "service-sandwich",
+      "href": "/services/sendvich-paneli/"
+    },
+    {
+      "title": "Монтаж оборудования",
+      "image": "service-equipment",
+      "href": "/services/montazh-oborudovaniya/"
+    }
+  ],
+  "lead": {
+    "heading": "Обсудим ваш проект?",
+    "description": "Оставьте заявку и мы подготовим предварительный расчет",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Ваше имя",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "phone",
+        "label": "Телефон",
+        "type": "tel",
+        "required": true
+      }
+    ],
+    "fileLabel": "Прикрепить файл (чертеж, ТЗ)",
+    "submit": "Отправить заявку",
+    "image": "team-engineers",
+    "benefits": [
+      {
+        "label": "Индивидуальный подход",
+        "icon": "icon-person-circle"
+      },
+      {
+        "label": "Технически обоснованные решения",
+        "icon": "icon-gear-circle"
+      },
+      {
+        "label": "Понятные этапы и сроки",
+        "icon": "icon-clock-circle"
+      }
+    ]
+  },
+  "directionsHeading": "Специальные направления",
+  "directions": [
+    {
+      "id": "individual",
+      "title": "Индивидуальное строительство",
+      "description": "Надежные дома и объекты для частных задач",
+      "image": "direction-individual",
+      "href": "/individualnoe-stroitelstvo/"
+    },
+    {
+      "id": "apk",
+      "title": "Строительство АПК",
+      "description": "Современные решения для агропромышленного комплекса",
+      "image": "direction-apk",
+      "href": "/apk/"
+    }
+  ]
+}

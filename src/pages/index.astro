@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Facts from '../components/Facts.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import LeadPanel from '../components/LeadPanel.astro';
+import Directions from '../components/Directions.astro';
+import home from '../data/home.json';
+import { withBase } from '../lib/urls';
+---
+
+<BaseLayout title={home.seoTitle} description={home.seoDescription} activeSection="home" bodyClass="home-page">
+  <Hero />
+  <Facts />
+  <section class="services-section container" aria-labelledby="services-title">
+    <div class="section-heading-row">
+      <h2 id="services-title">{home.servicesHeading}</h2>
+      <a href={withBase(home.servicesAllHref)}>{home.servicesAllLabel}<span aria-hidden="true">→</span></a>
+    </div>
+    <ServicesGrid cards={home.cards} />
+  </section>
+  <LeadPanel />
+  <Directions />
+</BaseLayout>

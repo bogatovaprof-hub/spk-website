@@ -1,0 +1,98 @@
+---
+import site from '../data/site.json';
+import { imageUrl, withBase } from '../lib/urls';
+
+interface Props {
+  activeSection?: string;
+}
+
+const { activeSection = '' } = Astro.props;
+const sectionFor = (href: string) => href === '/' ? 'home' : href.split('/').filter(Boolean)[0];
+---
+
+<header class="site-header" data-site-header>
+  <div class="container header-inner">
+    <a class="brand" href={withBase('/')} aria-label="СПК ТРЕЙД — на главную">
+      <img src={imageUrl('logo-header')} width="79" height="57" alt="СПК ТРЕЙД" />
+    </a>
+
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      {site.nav.map((item) => (
+        <a
+          href={withBase(item.href)}
+          aria-current={sectionFor(item.href) === activeSection ? 'page' : undefined}
+        >
+          {item.title}
+        </a>
+      ))}
+    </nav>
+
+    <a class="button button-primary header-cta" href={withBase(site.headerCta.href)}>
+      {site.headerCta.text}
+      <span aria-hidden="true">→</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+      aria-label={site.ui.menuOpen}
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav id="mobile-navigation" class="mobile-nav" aria-label="Мобильная навигация" hidden>
+    <div class="container mobile-nav-inner">
+      {site.nav.map((item) => (
+        <a
+          href={withBase(item.href)}
+          aria-current={sectionFor(item.href) === activeSection ? 'page' : undefined}
+        >
+          {item.title}
+        </a>
+      ))}
+      <a class="button button-primary" href={withBase(site.headerCta.href)}>{site.headerCta.text}</a>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  (() => {
+    const header = document.querySelector('[data-site-header]');
+    const toggle = header?.querySelector('.menu-toggle');
+    const menu = header?.querySelector('#mobile-navigation');
+    if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
+
+    const close = (restoreFocus = false) => {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Открыть меню');
+      menu.hidden = true;
+      document.body.classList.remove('menu-open');
+      if (restoreFocus) toggle.focus();
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        close();
+        return;
+      }
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Закрыть меню');
+      menu.hidden = false;
+      document.body.classList.add('menu-open');
+      menu.querySelector('a')?.focus();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !menu.hidden) close(true);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && !menu.hidden) close();
+    });
+  })();
+</script>
+

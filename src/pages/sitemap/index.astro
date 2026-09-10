@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import routes from '../../data/routes.json';
+import pages from '../../data/pages.json';
+import { withBase } from '../../lib/urls';
+
+const visibleRoutes = routes.filter((route) => route.path !== '/404.html');
+---
+
+<BaseLayout title="Карта сайта — СПК ТРЕЙД" description="Список страниц прототипа СПК ТРЕЙД.">
+  <InnerHero title={pages.sitemap.h1} />
+  <nav class="container content-section" aria-label="Все страницы сайта">
+    <ul class="sitemap-list">
+      {visibleRoutes.map((route) => <li><a href={withBase(route.path)}>{route.title}</a></li>)}
+    </ul>
+  </nav>
+</BaseLayout>
+

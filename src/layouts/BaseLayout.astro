@@ -1,0 +1,45 @@
+---
+import '@fontsource-variable/roboto/wght.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import ConsultationDialog from '../components/ConsultationDialog.astro';
+import Footer from '../components/Footer.astro';
+import { imageUrl } from '../lib/urls';
+
+interface Props {
+  title: string;
+  description: string;
+  activeSection?: string;
+  bodyClass?: string;
+}
+
+const {
+  title,
+  description,
+  activeSection = '',
+  bodyClass = ''
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#fafcfe" />
+    <link rel="icon" type="image/png" href={imageUrl('logo-header', 'png')} />
+    <title>{title}</title>
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+    <Header activeSection={activeSection} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <ConsultationDialog />
+  </body>
+</html>

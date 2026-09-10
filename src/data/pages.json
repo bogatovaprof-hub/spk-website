@@ -1,0 +1,82 @@
+{
+  "services": {
+    "h1": "Услуги",
+    "description": "Комплекс работ или отдельные задачи под ваш проект.",
+    "origin": "neutral-prototype-ui-based-on-client-FAQ"
+  },
+  "individual": {
+    "h1": "Индивидуальное строительство",
+    "description": "Надежные дома и объекты для частных задач",
+    "image": "direction-individual",
+    "secondaryHeading": "Обсудим ваш проект?",
+    "secondaryText": "Опишите задачу и приложите имеющиеся материалы.",
+    "primaryCta": "Отправить проект на расчет",
+    "secondaryCta": "Обсудить задачу",
+    "origin": "approved-image; secondaryText is new neutral UX",
+    "contentStatus": "short-template-no-confirmed-service-details",
+    "dontInvent": [
+      "Материалы стен",
+      "Типы домов",
+      "Цена за м²",
+      "Срок строительства",
+      "Типовой каталог",
+      "Гарантия на годы",
+      "Проекты частных домов"
+    ]
+  },
+  "apk": {
+    "h1": "Строительство АПК",
+    "description": "Современные решения для агропромышленного комплекса",
+    "image": "direction-apk",
+    "secondaryHeading": "Обсудим ваш проект?",
+    "secondaryText": "Опишите задачу и приложите имеющиеся материалы.",
+    "primaryCta": "Отправить проект на расчет",
+    "secondaryCta": "Обсудить задачу",
+    "origin": "approved-image; secondaryText is new neutral UX",
+    "contentStatus": "short-template-no-confirmed-service-details",
+    "dontInvent": [
+      "Подтверждённые животноводческие комплексы",
+      "Элеваторы как выполненные проекты",
+      "Пищевые линии конкретных производителей",
+      "Производительность",
+      "Цены и сроки"
+    ]
+  },
+  "projects": {
+    "h1": "Проекты",
+    "emptyHeading": "Место для выполненных проектов",
+    "emptyText": "В прототипе здесь предусмотрен каталог объектов. Названия, фотографии и описание работ будут добавлены после предоставления материалов.",
+    "primaryCta": "Обсудить задачу",
+    "items": [],
+    "origin": "prototype-placeholder",
+    "note": "Не выдавать картинки из референса за выполненные компанией объекты."
+  },
+  "faq": {
+    "h1": "Частые вопросы",
+    "origin": "client-document"
+  },
+  "contacts": {
+    "h1": "Контакты",
+    "companyLabel": "СПК ТРЕЙД",
+    "phoneLabel": "Телефон",
+    "emailLabel": "Электронная почта",
+    "unconfirmedText": "Контакты в прототипе приведены для проверки оформления. Рабочие данные будут добавлены после подтверждения.",
+    "primaryCta": "Оставить заявку",
+    "origin": "prototype-placeholder; displayed phone/email from approved-image"
+  },
+  "privacy": {
+    "h1": "Политика конфиденциальности",
+    "text": "Служебная страница прототипа. Утвержденный текст политики будет добавлен перед подключением отправки заявок. В текущем прототипе формы не передают введенные данные и выбранные файлы.",
+    "origin": "prototype-placeholder-not-legal-document"
+  },
+  "sitemap": {
+    "h1": "Карта сайта",
+    "origin": "approved-image footer label"
+  },
+  "notFound": {
+    "h1": "Страница не найдена",
+    "description": "Проверьте адрес или вернитесь на главную страницу.",
+    "cta": "На главную",
+    "origin": "prototype-ui-new-text"
+  }
+}

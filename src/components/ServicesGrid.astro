@@ -1,0 +1,25 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+interface Card {
+  title: string;
+  href: string;
+  image?: string | null;
+  text?: string;
+}
+
+interface Props {
+  cards: Card[];
+  showDescriptions?: boolean;
+  className?: string;
+}
+
+const { cards, showDescriptions = false, className = '' } = Astro.props;
+---
+
+<div class:list={['services-grid', className]}>
+  {cards.map((card) => (
+    <ServiceCard title={card.title} href={card.href} image={card.image} description={showDescriptions ? card.text : undefined} />
+  ))}
+</div>
+

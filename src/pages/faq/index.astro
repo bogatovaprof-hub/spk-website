@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import faq from '../../data/faq.json';
+import pages from '../../data/pages.json';
+---
+
+<BaseLayout title="Частые вопросы — СПК ТРЕЙД" description="Ответы на частые вопросы о работах СПК ТРЕЙД." activeSection="faq">
+  <InnerHero title={pages.faq.h1} />
+  <section class="container content-section faq-list" aria-label="Вопросы и ответы">
+    {faq.map((item, index) => (
+      <details class="faq-item" open={index === 0}>
+        <summary>{item.question}</summary>
+        <div class="faq-answer"><p>{item.answer}</p></div>
+      </details>
+    ))}
+  </section>
+  <CallToAction />
+</BaseLayout>
+

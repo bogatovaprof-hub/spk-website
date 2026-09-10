@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import pages from '../../data/pages.json';
+---
+
+<BaseLayout title="Политика конфиденциальности — СПК ТРЕЙД" description={pages.privacy.text}>
+  <InnerHero title={pages.privacy.h1} />
+  <section class="container content-section prose"><p>{pages.privacy.text}</p></section>
+</BaseLayout>
+

@@ -1,0 +1,134 @@
+[
+  {
+    "path": "/",
+    "title": "Главная",
+    "template": "Home",
+    "status": "approved-reference"
+  },
+  {
+    "path": "/services/",
+    "title": "Все услуги",
+    "template": "ServicesIndex",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/promyshlennoe-stroitelstvo/",
+    "title": "Промышленное строительство",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/proektirovanie/",
+    "title": "Проектирование",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/metallokonstruktsii/",
+    "title": "Монтаж металлоконструкций",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/promyshlennye-poly/",
+    "title": "Промышленные полы",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/polimernye-poly/",
+    "title": "Полимерные полы",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/monolitnye-raboty/",
+    "title": "Монолитные железобетонные работы",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/fasady/",
+    "title": "Устройство фасадов",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/sendvich-paneli/",
+    "title": "Монтаж сэндвич-панелей",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/montazh-oborudovaniya/",
+    "title": "Монтаж технологического оборудования",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/services/gidroizolyatsiya/",
+    "title": "Гидроизоляция",
+    "template": "ServiceDetail",
+    "status": "source-content"
+  },
+  {
+    "path": "/individualnoe-stroitelstvo/",
+    "title": "Индивидуальное строительство",
+    "template": "Direction",
+    "status": "short-draft"
+  },
+  {
+    "path": "/apk/",
+    "title": "Строительство АПК",
+    "template": "Direction",
+    "status": "short-draft"
+  },
+  {
+    "path": "/about/",
+    "title": "О компании",
+    "template": "About",
+    "status": "source-content"
+  },
+  {
+    "path": "/projects/",
+    "title": "Проекты",
+    "template": "Projects",
+    "status": "empty-state"
+  },
+  {
+    "path": "/faq/",
+    "title": "Частые вопросы",
+    "template": "Faq",
+    "status": "source-content"
+  },
+  {
+    "path": "/contacts/",
+    "title": "Контакты",
+    "template": "Contacts",
+    "status": "placeholders"
+  },
+  {
+    "path": "/request/",
+    "title": "Получить расчет",
+    "template": "Request",
+    "status": "demo-form"
+  },
+  {
+    "path": "/privacy/",
+    "title": "Политика конфиденциальности",
+    "template": "ServicePlaceholder",
+    "status": "placeholder"
+  },
+  {
+    "path": "/sitemap/",
+    "title": "Карта сайта",
+    "template": "HtmlSitemap",
+    "status": "navigation"
+  },
+  {
+    "path": "/404.html",
+    "title": "Страница не найдена",
+    "template": "NotFound",
+    "status": "utility"
+  }
+]
