@@ -1,0 +1,615 @@
+{
+  "source": {
+    "file": "reference/home-approved.png",
+    "width": 1122,
+    "height": 1402,
+    "provenance": "Выбранный пользователем светлый референс СПК. Исходные слои и отдельные фотографии не предоставлены."
+  },
+  "processing": "Только прямоугольное кадрирование. Без генерации, апскейла, удаления текста, ретуши и перекраски. PNG и WebP lossless содержат исходные пиксели внутри указанного прямоугольника.",
+  "assets": [
+    {
+      "id": "logo-header",
+      "kind": "logo",
+      "label": "Логотип в шапке",
+      "png": "public/images/logo-header.png",
+      "webp": "public/images/logo-header.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        64,
+        1,
+        143,
+        58
+      ],
+      "width": 79,
+      "height": 57,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Бледный исходный фон сохранён. Не вектор; не делать больше естественного размера.",
+      "sha256": "aa769d39293a795273f1894dd51b34eb2fa5aa6453fdc003e17a159b230cbc56"
+    },
+    {
+      "id": "logo-footer",
+      "kind": "logo",
+      "label": "Логотип в подвале",
+      "png": "public/images/logo-footer.png",
+      "webp": "public/images/logo-footer.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        53,
+        1337,
+        119,
+        1386
+      ],
+      "width": 66,
+      "height": 49,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Исходный светлый фон сохранён.",
+      "sha256": "755328db9d34f0db2bb0e0452b560656fbc8214287af68145ef8881e60f4e08e"
+    },
+    {
+      "id": "hero-industrial-right",
+      "kind": "photo",
+      "label": "Стальной каркас промышленного здания",
+      "png": "public/images/hero-industrial-right.png",
+      "webp": "public/images/hero-industrial-right.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        477,
+        64,
+        1122,
+        433
+      ],
+      "width": 645,
+      "height": 369,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Правая часть первого экрана без интерфейсного текста. Надписи на баннере являются частью картинки. Левая часть закрыта текстом и не восстанавливалась.",
+      "sha256": "268e27f87dfc84cde291ad7d646739143e8646f510160a0df5013f3b8f4f9255"
+    },
+    {
+      "id": "service-industrial",
+      "kind": "photo",
+      "label": "Промышленное строительство",
+      "png": "public/images/service-industrial.png",
+      "webp": "public/images/service-industrial.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        58,
+        584,
+        300,
+        672
+      ],
+      "width": 242,
+      "height": 88,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Кроп фотографии первой карточки, без подписи.",
+      "sha256": "a8d28b2b44021ecb0c3f5736156443f9c6e3741c5f1160e6cb2c0807258c5066"
+    },
+    {
+      "id": "service-design",
+      "kind": "photo",
+      "label": "Проектирование",
+      "png": "public/images/service-design.png",
+      "webp": "public/images/service-design.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        314,
+        584,
+        553,
+        672
+      ],
+      "width": 239,
+      "height": 88,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Кроп фотографии карточки, без подписи.",
+      "sha256": "4bbe4fc4e86504685e30a4ef2774ce4534a2b1c554d7790a75af2767de605561"
+    },
+    {
+      "id": "service-metal",
+      "kind": "photo",
+      "label": "Металлоконструкции",
+      "png": "public/images/service-metal.png",
+      "webp": "public/images/service-metal.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        568,
+        584,
+        808,
+        672
+      ],
+      "width": 240,
+      "height": 88,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Кроп фотографии карточки, без подписи.",
+      "sha256": "3994f56b2b873009ecf7d612c8f42065768f0ebe137c3d381eb8adea1afcf014"
+    },
+    {
+      "id": "service-floors",
+      "kind": "photo",
+      "label": "Промышленные и полимерные полы",
+      "png": "public/images/service-floors.png",
+      "webp": "public/images/service-floors.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        823,
+        584,
+        1063,
+        672
+      ],
+      "width": 240,
+      "height": 88,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "В референсе одна фотография для объединённой карточки полов.",
+      "sha256": "30373ff6a073c9e8fe4707f5f52424d5d5fa490ae6ab892e2a51c51ccc8cf39f"
+    },
+    {
+      "id": "service-monolith",
+      "kind": "photo",
+      "label": "Монолитные железобетонные работы",
+      "png": "public/images/service-monolith.png",
+      "webp": "public/images/service-monolith.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        58,
+        734,
+        300,
+        824
+      ],
+      "width": 242,
+      "height": 90,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Кроп фотографии карточки, без подписи.",
+      "sha256": "be4341569e1a8890f259d069b6036830f0ee03a1b06f4cdf68ec32a3fbe4af21"
+    },
+    {
+      "id": "service-facades",
+      "kind": "photo",
+      "label": "Устройство фасадов",
+      "png": "public/images/service-facades.png",
+      "webp": "public/images/service-facades.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        314,
+        734,
+        553,
+        824
+      ],
+      "width": 239,
+      "height": 90,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Кроп фотографии карточки, без подписи.",
+      "sha256": "6fa612b785585fc397160f675d4f411acf21bea5b9530adeb181e30ef793185a"
+    },
+    {
+      "id": "service-sandwich",
+      "kind": "photo",
+      "label": "Сэндвич-панели",
+      "png": "public/images/service-sandwich.png",
+      "webp": "public/images/service-sandwich.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        568,
+        734,
+        808,
+        824
+      ],
+      "width": 240,
+      "height": 90,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Кроп фотографии карточки, без подписи.",
+      "sha256": "24e44d07b754f71206cfc1c67f26f09ad4ca919bc0349388ef1f744ff1e91bb6"
+    },
+    {
+      "id": "service-equipment",
+      "kind": "photo",
+      "label": "Монтаж оборудования",
+      "png": "public/images/service-equipment.png",
+      "webp": "public/images/service-equipment.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        823,
+        734,
+        1063,
+        824
+      ],
+      "width": 240,
+      "height": 90,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Кроп фотографии карточки, без подписи.",
+      "sha256": "aa2762f0870e8b4f44f27ab89d9e20ded5917fb48672c231b5bddcda529a44b6"
+    },
+    {
+      "id": "team-engineers",
+      "kind": "photo",
+      "label": "Два инженера с чертежом",
+      "png": "public/images/team-engineers.png",
+      "webp": "public/images/team-engineers.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        430,
+        893,
+        854,
+        1155
+      ],
+      "width": 424,
+      "height": 262,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Центр блока формы. Исходные высветления по краям и надписи на одежде сохранены.",
+      "sha256": "3a0f2358d5cd105a282b32f44548fa87e782b33cbe621fe4a011eaafb3387818"
+    },
+    {
+      "id": "direction-individual",
+      "kind": "photo",
+      "label": "Индивидуальное строительство",
+      "png": "public/images/direction-individual.png",
+      "webp": "public/images/direction-individual.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        46,
+        1206,
+        320,
+        1320
+      ],
+      "width": 274,
+      "height": 114,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Левая фотографическая часть карточки. Без заголовка и кнопки; исходное высветление справа сохранено.",
+      "sha256": "4cb12e4c7dcecb65f4f43c09f763217f7126e25070a50692e5da6d2646928391"
+    },
+    {
+      "id": "direction-apk",
+      "kind": "photo",
+      "label": "Строительство АПК",
+      "png": "public/images/direction-apk.png",
+      "webp": "public/images/direction-apk.webp",
+      "source": "reference/home-approved.png",
+      "crop": [
+        568,
+        1206,
+        858,
+        1320
+      ],
+      "width": 290,
+      "height": 114,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Левая фотографическая часть карточки. Без заголовка и кнопки; исходное высветление справа сохранено.",
+      "sha256": "e5f72327bbf35de8a1bca2c48ee84c8724ccce21b3dfc56dbe96af8f989fe6c0"
+    },
+    {
+      "id": "icon-hardhat",
+      "kind": "icon",
+      "label": "Каска",
+      "png": "public/icons/icon-hardhat.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        62,
+        456,
+        118,
+        504
+      ],
+      "width": 56,
+      "height": 48,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-team",
+      "kind": "icon",
+      "label": "Команда",
+      "png": "public/icons/icon-team.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        332,
+        456,
+        388,
+        504
+      ],
+      "width": 56,
+      "height": 48,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-equipment",
+      "kind": "icon",
+      "label": "Оборудование",
+      "png": "public/icons/icon-equipment.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        597,
+        456,
+        646,
+        507
+      ],
+      "width": 49,
+      "height": 51,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-location",
+      "kind": "icon",
+      "label": "География",
+      "png": "public/icons/icon-location.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        862,
+        455,
+        913,
+        504
+      ],
+      "width": 51,
+      "height": 49,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-person-circle",
+      "kind": "icon",
+      "label": "Индивидуальный подход",
+      "png": "public/icons/icon-person-circle.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        864,
+        930,
+        916,
+        983
+      ],
+      "width": 52,
+      "height": 53,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-gear-circle",
+      "kind": "icon",
+      "label": "Технические решения",
+      "png": "public/icons/icon-gear-circle.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        864,
+        1000,
+        916,
+        1054
+      ],
+      "width": 52,
+      "height": 54,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-clock-circle",
+      "kind": "icon",
+      "label": "Этапы и сроки",
+      "png": "public/icons/icon-clock-circle.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        864,
+        1072,
+        916,
+        1127
+      ],
+      "width": 52,
+      "height": 55,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-paperclip",
+      "kind": "icon",
+      "label": "Прикрепить файл",
+      "png": "public/icons/icon-paperclip.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        62,
+        1070,
+        84,
+        1093
+      ],
+      "width": 22,
+      "height": 23,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-phone",
+      "kind": "icon",
+      "label": "Телефон",
+      "png": "public/icons/icon-phone.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        767,
+        1351,
+        794,
+        1379
+      ],
+      "width": 27,
+      "height": 28,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-mail",
+      "kind": "icon",
+      "label": "Почта",
+      "png": "public/icons/icon-mail.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        938,
+        1352,
+        962,
+        1376
+      ],
+      "width": 24,
+      "height": 24,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "icon-arrow-circle",
+      "kind": "icon",
+      "label": "Стрелка в круге",
+      "png": "public/icons/icon-arrow-circle.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        499,
+        1263,
+        542,
+        1308
+      ],
+      "width": 43,
+      "height": 45,
+      "pixelExact": true,
+      "containsInterfaceText": false,
+      "note": "Растровый кроп иконки. Светлый фон сохранён. Векторный эквивалент допускается только как отдельная явно указанная аппроксимация."
+    },
+    {
+      "id": "section-header",
+      "kind": "section-reference",
+      "label": "section-header",
+      "png": "reference/section-header.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        0,
+        0,
+        1122,
+        64
+      ],
+      "width": 1122,
+      "height": 64,
+      "pixelExact": true,
+      "containsInterfaceText": true,
+      "note": "Только для визуальной сверки. Не вставлять в сайт целым скриншотом."
+    },
+    {
+      "id": "section-hero",
+      "kind": "section-reference",
+      "label": "section-hero",
+      "png": "reference/section-hero.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        0,
+        64,
+        1122,
+        434
+      ],
+      "width": 1122,
+      "height": 370,
+      "pixelExact": true,
+      "containsInterfaceText": true,
+      "note": "Только для визуальной сверки. Не вставлять в сайт целым скриншотом."
+    },
+    {
+      "id": "section-stats",
+      "kind": "section-reference",
+      "label": "section-stats",
+      "png": "reference/section-stats.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        0,
+        434,
+        1122,
+        528
+      ],
+      "width": 1122,
+      "height": 94,
+      "pixelExact": true,
+      "containsInterfaceText": true,
+      "note": "Только для визуальной сверки. Не вставлять в сайт целым скриншотом."
+    },
+    {
+      "id": "section-services",
+      "kind": "section-reference",
+      "label": "section-services",
+      "png": "reference/section-services.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        38,
+        528,
+        1090,
+        880
+      ],
+      "width": 1052,
+      "height": 352,
+      "pixelExact": true,
+      "containsInterfaceText": true,
+      "note": "Только для визуальной сверки. Не вставлять в сайт целым скриншотом."
+    },
+    {
+      "id": "section-lead",
+      "kind": "section-reference",
+      "label": "section-lead",
+      "png": "reference/section-lead.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        38,
+        891,
+        1084,
+        1156
+      ],
+      "width": 1046,
+      "height": 265,
+      "pixelExact": true,
+      "containsInterfaceText": true,
+      "note": "Только для визуальной сверки. Не вставлять в сайт целым скриншотом."
+    },
+    {
+      "id": "section-directions",
+      "kind": "section-reference",
+      "label": "section-directions",
+      "png": "reference/section-directions.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        40,
+        1165,
+        1086,
+        1323
+      ],
+      "width": 1046,
+      "height": 158,
+      "pixelExact": true,
+      "containsInterfaceText": true,
+      "note": "Только для визуальной сверки. Не вставлять в сайт целым скриншотом."
+    },
+    {
+      "id": "section-footer",
+      "kind": "section-reference",
+      "label": "section-footer",
+      "png": "reference/section-footer.png",
+      "source": "reference/home-approved.png",
+      "crop": [
+        0,
+        1330,
+        1122,
+        1402
+      ],
+      "width": 1122,
+      "height": 72,
+      "pixelExact": true,
+      "containsInterfaceText": true,
+      "note": "Только для визуальной сверки. Не вставлять в сайт целым скриншотом."
+    }
+  ]
+}

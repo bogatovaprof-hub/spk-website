@@ -1,0 +1,16 @@
+---
+import home from '../data/home.json';
+import { iconUrl } from '../lib/urls';
+---
+
+<section class="facts" aria-label="Ключевые факты">
+  <div class="container facts-grid">
+    {home.facts.map((fact) => (
+      <div class="fact">
+        <img src={iconUrl(fact.icon)} width="56" height="52" alt="" />
+        <p><strong>{fact.value}</strong><span>{fact.label}</span></p>
+      </div>
+    ))}
+  </div>
+</section>
+

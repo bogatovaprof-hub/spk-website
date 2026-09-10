@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import pages from '../../data/pages.json';
+import site from '../../data/site.json';
+---
+
+<BaseLayout title="Контакты — СПК ТРЕЙД" description={pages.contacts.unconfirmedText} activeSection="contacts">
+  <InnerHero title={pages.contacts.h1} description={pages.contacts.unconfirmedText} />
+  <section class="container content-section">
+    <div class="contact-card">
+      <h2>{pages.contacts.companyLabel}</h2>
+      <dl class="contact-list">
+        <div><dt>{pages.contacts.phoneLabel}</dt><dd>{site.contacts.phoneDisplay}</dd></div>
+        <div><dt>{pages.contacts.emailLabel}</dt><dd>{site.contacts.emailDisplay}</dd></div>
+      </dl>
+      <p>{site.ui.contactUnconfirmed}</p>
+      <button class="button button-primary" type="button" data-dialog-open>{pages.contacts.primaryCta}</button>
+    </div>
+  </section>
+</BaseLayout>
+

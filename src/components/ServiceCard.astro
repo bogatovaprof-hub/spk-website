@@ -1,0 +1,29 @@
+---
+import { imageUrl, withBase } from '../lib/urls';
+
+interface Props {
+  title: string;
+  href: string;
+  image?: string | null;
+  description?: string;
+}
+
+const { title, href, image = null, description } = Astro.props;
+---
+
+<a class:list={['service-card', { 'service-card-text-only': !image }]} href={withBase(href)}>
+  {image ? (
+    <picture class="service-card-media">
+      <source srcset={imageUrl(image)} type="image/webp" />
+      <img src={imageUrl(image, 'png')} width="242" height="90" alt="" loading="lazy" />
+    </picture>
+  ) : (
+    <div class="service-card-media service-card-placeholder" aria-hidden="true"><span>СПК</span></div>
+  )}
+  <div class="service-card-body">
+    <span class="service-card-title">{title}</span>
+    {description && <span class="service-card-description">{description}</span>}
+    <span class="service-card-arrow" aria-hidden="true">→</span>
+  </div>
+</a>
+

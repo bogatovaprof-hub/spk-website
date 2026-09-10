@@ -1,0 +1,33 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+import { imageUrl } from '../lib/urls';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string | null;
+  parent?: { title: string; href: string };
+}
+
+const { title, description, image = null, parent } = Astro.props;
+const crumbs = parent ? [parent, { title }] : [{ title }];
+---
+
+<section class="inner-hero">
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <div class:list={['inner-hero-grid', { 'has-image': image }]}>
+      <div>
+        <h1>{title}</h1>
+        {description && <p>{description}</p>}
+      </div>
+      {image && (
+        <picture class="inner-thumbnail">
+          <source srcset={imageUrl(image)} type="image/webp" />
+          <img src={imageUrl(image, 'png')} width="290" height="114" alt="" />
+        </picture>
+      )}
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,24 @@
+---
+import home from '../data/home.json';
+import { iconUrl, imageUrl, withBase } from '../lib/urls';
+---
+
+<section class="directions-section container" aria-labelledby="directions-title">
+  <h2 id="directions-title">{home.directionsHeading}</h2>
+  <div class="directions-grid">
+    {home.directions.map((direction) => (
+      <a class="direction-card" href={withBase(direction.href)}>
+        <picture>
+          <source srcset={imageUrl(direction.image)} type="image/webp" />
+          <img src={imageUrl(direction.image, 'png')} width="290" height="114" alt="" loading="lazy" />
+        </picture>
+        <span class="direction-copy">
+          <strong>{direction.title}</strong>
+          <span>{direction.description}</span>
+        </span>
+        <img class="direction-arrow" src={iconUrl('icon-arrow-circle')} width="43" height="45" alt="" loading="lazy" />
+      </a>
+    ))}
+  </div>
+</section>
+

@@ -1,0 +1,221 @@
+---
+import services from '../data/services.json';
+import forms from '../data/forms.json';
+import site from '../data/site.json';
+import { iconUrl } from '../lib/urls';
+
+interface Props {
+  formId: string;
+  variant?: 'compact' | 'request' | 'consultation';
+  includeFiles?: boolean;
+  visuallyHiddenLabels?: boolean;
+  submitLabel?: string;
+}
+
+const {
+  formId,
+  variant = 'compact',
+  includeFiles = false,
+  visuallyHiddenLabels = false,
+  submitLabel = variant === 'request' ? forms.request.submit : variant === 'consultation' ? forms.consultation.submit : 'Отправить заявку'
+} = Astro.props;
+const isRequest = variant === 'request';
+const labelClass = visuallyHiddenLabels ? 'visually-hidden' : undefined;
+const policy = site.formPolicy;
+---
+
+<form
+  class:list={['demo-form', `demo-form-${variant}`]}
+  novalidate
+  data-demo-form
+  data-max-files={policy.maxFiles}
+  data-max-file-bytes={policy.maxFileBytes}
+  data-max-total-bytes={policy.maxTotalBytes}
+  data-extensions={policy.extensions.join(',')}
+  data-success={site.ui.demoSubmit}
+  data-invalid={site.ui.formInvalid}
+  data-name-error={site.ui.nameError}
+  data-phone-error={site.ui.phoneError}
+  data-email-error={site.ui.emailError}
+  data-file-type-error={site.ui.fileTypeError}
+  data-file-size-error={site.ui.fileSizeError}
+  data-file-count-error={site.ui.fileCountError}
+  data-file-total-error={site.ui.fileTotalError}
+>
+  <div class="form-fields">
+    <div class="field">
+      <label class={labelClass} for={`${formId}-name`}>{isRequest ? 'Имя' : 'Ваше имя'}</label>
+      <input id={`${formId}-name`} name="name" type="text" autocomplete="name" placeholder={isRequest ? undefined : 'Ваше имя'} required aria-describedby={`${formId}-name-error`} />
+      <span class="field-error" id={`${formId}-name-error`} data-error-for="name"></span>
+    </div>
+
+    {isRequest && (
+      <div class="field">
+        <label for={`${formId}-company`}>Компания</label>
+        <input id={`${formId}-company`} name="company" type="text" autocomplete="organization" />
+        <span class="field-error" aria-hidden="true"></span>
+      </div>
+    )}
+
+    <div class="field">
+      <label class={labelClass} for={`${formId}-phone`}>Телефон</label>
+      <input id={`${formId}-phone`} name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder={isRequest ? undefined : 'Телефон'} required aria-describedby={`${formId}-phone-error`} />
+      <span class="field-error" id={`${formId}-phone-error`} data-error-for="phone"></span>
+    </div>
+
+    {isRequest && (
+      <>
+        <div class="field">
+          <label for={`${formId}-email`}>Электронная почта</label>
+          <input id={`${formId}-email`} name="email" type="email" inputmode="email" autocomplete="email" aria-describedby={`${formId}-email-error`} />
+          <span class="field-error" id={`${formId}-email-error`} data-error-for="email"></span>
+        </div>
+        <div class="field field-wide">
+          <label for={`${formId}-service`}>Вид работ</label>
+          <select id={`${formId}-service`} name="service">
+            <option value="">{forms.request.servicePlaceholder}</option>
+            {services.map((service) => <option value={service.id}>{service.title}</option>)}
+            {forms.request.serviceExtraOptions.map((option) => <option value={option}>{option}</option>)}
+          </select>
+          <span class="field-error" aria-hidden="true"></span>
+        </div>
+        <div class="field field-wide">
+          <label for={`${formId}-message`}>Краткое описание задачи</label>
+          <textarea id={`${formId}-message`} name="message" rows="5"></textarea>
+          <span class="field-error" aria-hidden="true"></span>
+        </div>
+      </>
+    )}
+  </div>
+
+  {includeFiles && (
+    <div class="file-control">
+      <label class="file-label" for={`${formId}-files`}>
+        <img src={iconUrl('icon-paperclip')} width="22" height="23" alt="" />
+        <span>{isRequest ? 'Прикрепить файлы' : 'Прикрепить файл (чертеж, ТЗ)'}</span>
+      </label>
+      <input class="file-input" id={`${formId}-files`} name="files" type="file" multiple accept={policy.extensions.map((extension) => `.${extension}`).join(',')} aria-describedby={`${formId}-files-help ${formId}-files-error`} />
+      <p class="file-help" id={`${formId}-files-help`}>До 10 файлов, 20 МБ каждый и 50 МБ суммарно.</p>
+      <span class="field-error" id={`${formId}-files-error`} data-file-error></span>
+      <ul class="file-list" data-file-list aria-live="polite"></ul>
+    </div>
+  )}
+
+  <button class="button button-primary form-submit" type="submit">{submitLabel}</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+  <noscript><p class="form-noscript">{site.ui.noJsForm}</p></noscript>
+</form>
+
+<script>
+  const initialized = new WeakSet<HTMLFormElement>();
+  const selectedFiles = new WeakMap<HTMLInputElement, File[]>();
+
+  const bytesLabel = (bytes: number) => {
+    if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} КБ`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} МБ`;
+  };
+
+  const setFieldState = (form: HTMLFormElement, name: string, invalid: boolean, message: string): HTMLInputElement | null => {
+    const input = form.elements.namedItem(name);
+    const error = form.querySelector(`[data-error-for="${name}"]`);
+    if (!(input instanceof HTMLInputElement)) return null;
+    input.setAttribute('aria-invalid', String(invalid));
+    if (error) error.textContent = invalid ? message : '';
+    return invalid ? input : null;
+  };
+
+  const renderFiles = (form: HTMLFormElement) => {
+    const input = form.querySelector('.file-input');
+    const list = form.querySelector('[data-file-list]');
+    if (!(input instanceof HTMLInputElement) || !(list instanceof HTMLUListElement)) return;
+    const files = selectedFiles.get(input) || [];
+    list.replaceChildren();
+    files.forEach((file, index) => {
+      const item = document.createElement('li');
+      const info = document.createElement('span');
+      const name = document.createElement('strong');
+      const size = document.createElement('small');
+      const remove = document.createElement('button');
+      name.textContent = file.name;
+      size.textContent = bytesLabel(file.size);
+      info.append(name, size);
+      remove.type = 'button';
+      remove.className = 'file-remove';
+      remove.textContent = 'Удалить';
+      remove.setAttribute('aria-label', `Удалить файл ${file.name}`);
+      remove.addEventListener('click', () => {
+        const next = files.filter((_, fileIndex) => fileIndex !== index);
+        selectedFiles.set(input, next);
+        const transfer = new DataTransfer();
+        next.forEach((entry) => transfer.items.add(entry));
+        input.files = transfer.files;
+        renderFiles(form);
+        input.focus();
+      });
+      item.append(info, remove);
+      list.append(item);
+    });
+  };
+
+  document.querySelectorAll('[data-demo-form]').forEach((form) => {
+    if (!(form instanceof HTMLFormElement) || initialized.has(form)) return;
+    initialized.add(form);
+
+    const fileInput = form.querySelector('.file-input');
+    if (fileInput instanceof HTMLInputElement) {
+      selectedFiles.set(fileInput, []);
+      fileInput.addEventListener('change', () => {
+        const fileError = form.querySelector('[data-file-error]');
+        if (fileError) fileError.textContent = '';
+        selectedFiles.set(fileInput, Array.from(fileInput.files || []));
+        renderFiles(form);
+      });
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const status = form.querySelector('.form-status');
+      if (status) status.textContent = '';
+      const firstInvalid: HTMLElement[] = [];
+      const name = form.elements.namedItem('name');
+      const phone = form.elements.namedItem('phone');
+      const email = form.elements.namedItem('email');
+      const nameInvalid = !(name instanceof HTMLInputElement) || name.value.trim().length < 2;
+      const phoneInvalid = !(phone instanceof HTMLInputElement) || phone.value.replace(/\D/g, '').length < 5;
+      const emailInvalid = email instanceof HTMLInputElement && email.value.trim() !== '' && !email.validity.valid;
+
+      const nameResult = setFieldState(form, 'name', nameInvalid, form.dataset.nameError || 'Укажите имя.');
+      const phoneResult = setFieldState(form, 'phone', phoneInvalid, form.dataset.phoneError || 'Укажите телефон для связи.');
+      const emailResult = email instanceof HTMLInputElement
+        ? setFieldState(form, 'email', emailInvalid, form.dataset.emailError || 'Проверьте адрес электронной почты.')
+        : null;
+      [nameResult, phoneResult, emailResult].forEach((item) => item && firstInvalid.push(item));
+
+      let fileInvalid = false;
+      if (fileInput instanceof HTMLInputElement) {
+        const files = selectedFiles.get(fileInput) || [];
+        const allowed = (form.dataset.extensions || '').split(',');
+        const maxFiles = Number(form.dataset.maxFiles);
+        const maxFileBytes = Number(form.dataset.maxFileBytes);
+        const maxTotalBytes = Number(form.dataset.maxTotalBytes);
+        const fileError = form.querySelector('[data-file-error]');
+        let message = '';
+        if (files.length > maxFiles) message = form.dataset.fileCountError || '';
+        else if (files.some((file) => !allowed.includes(file.name.split('.').pop()?.toLowerCase() || ''))) message = form.dataset.fileTypeError || '';
+        else if (files.some((file) => file.size > maxFileBytes)) message = form.dataset.fileSizeError || '';
+        else if (files.reduce((total, file) => total + file.size, 0) > maxTotalBytes) message = form.dataset.fileTotalError || '';
+        fileInvalid = Boolean(message);
+        fileInput.setAttribute('aria-invalid', String(fileInvalid));
+        if (fileError) fileError.textContent = message;
+        if (fileInvalid) firstInvalid.push(fileInput);
+      }
+
+      if (firstInvalid.length > 0) {
+        if (status) status.textContent = form.dataset.invalid || 'Проверьте отмеченные поля.';
+        firstInvalid[0].focus();
+        return;
+      }
+      if (status) status.textContent = form.dataset.success || '';
+    });
+  });
+</script>

@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import services from '../../data/services.json';
+import objects from '../../data/objects.json';
+import { withBase } from '../../lib/urls';
+
+type Service = (typeof services)[number];
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service }
+  }));
+}
+
+interface Props {
+  service: Service;
+}
+
+const { service } = Astro.props;
+const showing = service.id === 'industrial' ? objects : [];
+const related = service.id === 'industrial-floors'
+  ? services.find((item) => item.id === 'polymer-floors')
+  : service.id === 'polymer-floors'
+    ? services.find((item) => item.id === 'industrial-floors')
+    : undefined;
+---
+
+<BaseLayout title={service.seoTitle} description={service.seoDescription} activeSection="services">
+  <InnerHero
+    title={service.h1}
+    description={service.text}
+    image={service.image}
+    parent={{ title: 'Услуги', href: '/services/' }}
+  />
+
+  {(showing.length > 0 || related) && (
+    <section class="container content-section two-column-content">
+      {showing.length > 0 && (
+        <div class="prose">
+          <h2>Какие объекты мы строим?</h2>
+          <p>Работаем с промышленными и коммерческими объектами:</p>
+          <ul>{showing.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      )}
+      {related && (
+        <aside class="info-card">
+          <h2>Связанная услуга</h2>
+          <p>{related.title}</p>
+          <a class="related-link" href={withBase(related.href)}>Подробнее <span aria-hidden="true">→</span></a>
+        </aside>
+      )}
+    </section>
+  )}
+
+  <CallToAction primaryLabel={service.primaryCta} secondaryLabel={service.secondaryCta} />
+</BaseLayout>

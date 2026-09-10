@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import services from '../../data/services.json';
+import pages from '../../data/pages.json';
+---
+
+<BaseLayout title="Услуги — СПК ТРЕЙД" description={pages.services.description} activeSection="services">
+  <InnerHero title={pages.services.h1} description={pages.services.description} />
+  <section class="container content-section" aria-label="Каталог услуг">
+    <ServicesGrid cards={services} showDescriptions className="catalog-grid" />
+  </section>
+  <CallToAction />
+</BaseLayout>
+

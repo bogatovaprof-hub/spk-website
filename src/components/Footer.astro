@@ -1,0 +1,23 @@
+---
+import site from '../data/site.json';
+import { iconUrl, imageUrl, withBase } from '../lib/urls';
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href={withBase('/')} aria-label="СПК ТРЕЙД — на главную">
+        <img src={imageUrl('logo-footer')} width="66" height="49" alt="СПК ТРЕЙД" loading="lazy" />
+      </a>
+      <p>{site.footer.slogan}</p>
+    </div>
+    <nav class="footer-nav" aria-label="Служебная навигация">
+      {site.footer.links.map((link) => <a href={withBase(link.href)}>{link.title}</a>)}
+    </nav>
+    <address class="footer-contacts">
+      <span><img src={iconUrl('icon-phone')} width="27" height="28" alt="" />{site.contacts.phoneDisplay}</span>
+      <span><img src={iconUrl('icon-mail')} width="24" height="24" alt="" />{site.contacts.emailDisplay}</span>
+    </address>
+  </div>
+</footer>
+

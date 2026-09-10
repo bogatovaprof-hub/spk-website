@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHero from '../../components/InnerHero.astro';
+import DemoForm from '../../components/DemoForm.astro';
+import forms from '../../data/forms.json';
+---
+
+<BaseLayout title="Получить расчет — СПК ТРЕЙД" description={forms.request.description}>
+  <InnerHero title={forms.request.h1} description={forms.request.description} />
+  <section class="container content-section request-wrap">
+    <div class="request-card">
+      <DemoForm formId="project-request" variant="request" includeFiles submitLabel={forms.request.submit} />
+    </div>
+  </section>
+</BaseLayout>
+
