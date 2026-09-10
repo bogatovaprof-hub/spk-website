@@ -3,7 +3,7 @@
 Дата проверки: 10.09.2026  
 Рабочая папка: `D:\0 кодекс\сайт СПК`  
 Ветка: `codex/spk-prototype-v1`  
-GitHub: `https://github.com/bogatovaprof-hub/spk-website` (приватный репозиторий)  
+GitHub: `https://github.com/bogatovaprof-hub/spk-website` (публичный репозиторий)  
 Эталон: `reference/home-approved.png`, 1122 × 1402 px
 
 ## 1. Что проверено
