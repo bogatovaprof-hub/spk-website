@@ -20,6 +20,9 @@ const {
   activeSection = '',
   bodyClass = ''
 } = Astro.props;
+const resolvedBodyClass = [bodyClass, bodyClass.includes('home-page') ? '' : 'inner-page']
+  .filter(Boolean)
+  .join(' ');
 ---
 
 <!doctype html>
@@ -33,7 +36,7 @@ const {
     <link rel="icon" type="image/png" href={withBase('/images/logo-spk-client.png')} />
     <title>{title}</title>
   </head>
-  <body class={bodyClass}>
+  <body class={resolvedBodyClass}>
     <a class="skip-link" href="#main-content">Перейти к содержанию</a>
     <Header activeSection={activeSection} />
     <main id="main-content">

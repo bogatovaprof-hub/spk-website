@@ -5,7 +5,7 @@ import DemoForm from '../../components/DemoForm.astro';
 import forms from '../../data/forms.json';
 ---
 
-<BaseLayout title="Получить расчет — СПК ТРЕЙД" description={forms.request.description}>
+<BaseLayout title="Получить расчет — СПК ТРЕЙД" description={forms.request.description} bodyClass="request-page">
   <InnerHero title={forms.request.h1} description={forms.request.description} />
   <section class="container content-section request-wrap">
     <div class="request-card">
@@ -13,4 +13,3 @@ import forms from '../../data/forms.json';
     </div>
   </section>
 </BaseLayout>
-

@@ -1428,6 +1428,338 @@ h3 {
   justify-self: start;
 }
 
+/* Compact UI for the multi-page part of the prototype. The homepage keeps the
+   approved long-form composition, while inner pages prioritize laptop-height
+   efficiency and scanability. */
+.inner-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-page main {
+  flex: 1 0 auto;
+}
+
+.inner-page .header-inner {
+  min-height: 4.25rem;
+  gap: clamp(0.85rem, 1.8vw, 1.75rem);
+}
+
+.inner-page .brand-logo-header {
+  width: 4.65rem;
+}
+
+.inner-page .desktop-nav {
+  gap: clamp(0.65rem, 1.35vw, 1.25rem);
+}
+
+.inner-page .desktop-nav a {
+  font-size: 0.82rem;
+}
+
+.inner-page .header-cta {
+  min-height: 2.5rem;
+  padding: 0.62rem 0.95rem;
+  font-size: 0.9rem;
+}
+
+.inner-page .inner-hero {
+  padding: 0.7rem 0 1.15rem;
+}
+
+.inner-page .breadcrumbs ol {
+  margin-bottom: 0.7rem;
+}
+
+.inner-page .inner-hero-grid {
+  gap: 1.25rem;
+}
+
+.inner-page .inner-hero-grid.has-image {
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
+}
+
+.inner-page .inner-hero h1 {
+  max-width: 30ch;
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  line-height: 1.02;
+}
+
+.inner-page .inner-hero-grid p {
+  max-width: 62rem;
+  margin-top: 0.5rem;
+  font-size: clamp(0.94rem, 1.12vw, 1.03rem);
+  line-height: 1.35;
+}
+
+.inner-page .inner-thumbnail {
+  justify-self: end;
+}
+
+.inner-page .content-section {
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.inner-page .two-column-content {
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.inner-page .inner-cta {
+  gap: 1.25rem;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+  padding: 1rem 1.25rem;
+}
+
+.inner-page .inner-cta h2 {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.inner-page .inner-cta p {
+  margin-top: 0.25rem;
+  font-size: 0.94rem;
+}
+
+.inner-page .site-footer {
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.inner-page .footer-inner {
+  min-height: 5.75rem;
+  gap: 1.25rem;
+  padding-block: 0.65rem;
+}
+
+.inner-page .brand-logo-footer {
+  width: 3.8rem;
+}
+
+.inner-page .footer-brand {
+  gap: 0.75rem;
+}
+
+.inner-page .footer-brand p {
+  font-size: 0.76rem;
+}
+
+.inner-page .service-detail-flow {
+  max-width: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+}
+
+.inner-page .service-detail-section {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+.inner-page .service-detail-section:only-child {
+  grid-column: 1 / -1;
+}
+
+.inner-page .service-detail-section:last-child {
+  padding-bottom: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.inner-page .service-detail-section h2,
+.inner-page .content-section h2 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+}
+
+.inner-page .prose {
+  font-size: clamp(0.94rem, 1.08vw, 1rem);
+}
+
+.inner-page .prose p {
+  margin-bottom: 0.7rem;
+}
+
+.inner-page .prose ul,
+.inner-page .plain-list {
+  gap: 0.42rem;
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(15rem, 0.9fr));
+  align-items: start;
+  gap: 1rem;
+}
+
+.about-content-grid .info-card {
+  padding: 1rem 1.15rem;
+}
+
+.about-content-grid .info-card h2 {
+  font-size: clamp(1.2rem, 1.65vw, 1.5rem);
+}
+
+.inner-page .faq-list {
+  max-width: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 0.65rem;
+}
+
+.inner-page .faq-item summary {
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.inner-page .faq-answer {
+  padding: 0 1rem 1rem;
+  font-size: 0.94rem;
+}
+
+.inner-page .catalog-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.inner-page .catalog-grid .service-card-body {
+  min-height: 6.4rem;
+  padding: 0.7rem 2.35rem 0.7rem 0.85rem;
+}
+
+.inner-page .catalog-grid .service-card-description {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  line-height: 1.32;
+  -webkit-line-clamp: 2;
+}
+
+.inner-page .project-card {
+  min-height: 13.75rem;
+  padding: 1.1rem 1.2rem;
+}
+
+.inner-page .projects-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.inner-page .project-card h2 {
+  margin-top: 0.4rem;
+  font-size: clamp(1.22rem, 1.7vw, 1.5rem);
+}
+
+.inner-page .project-location {
+  margin-top: 0.45rem;
+  font-size: 0.92rem;
+}
+
+.inner-page .project-work {
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.inner-page .projects-visual-note {
+  margin-top: 0.75rem;
+}
+
+.request-page .request-wrap {
+  max-width: var(--container-max);
+  margin-top: 1rem;
+}
+
+.request-page .inner-hero {
+  padding-bottom: 0.3rem;
+}
+
+.request-page .breadcrumbs ol {
+  margin-bottom: 0.4rem;
+}
+
+.request-page .inner-hero h1 {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+}
+
+.request-page .request-card {
+  padding: 1rem 1.2rem;
+}
+
+.request-page .demo-form-request {
+  grid-template-columns: minmax(0, 1.8fr) minmax(16rem, 0.65fr);
+  grid-template-rows: auto auto auto;
+  align-items: start;
+  gap: 0.65rem 1.25rem;
+  margin-top: 0;
+}
+
+.request-page .request-card .form-fields {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  gap: 0.5rem 0.75rem;
+}
+
+.request-page .request-card .field-wide {
+  grid-column: auto;
+}
+
+.request-page .request-card .field {
+  gap: 0.2rem;
+}
+
+.request-page .request-card .field-error {
+  min-height: 0.9rem;
+  font-size: 0.72rem;
+}
+
+.request-page .file-control {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.request-page .form-submit {
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: stretch;
+}
+
+.request-page .form-status {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.inner-page .contact-card {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(20rem, 1.35fr) auto;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding: 1.2rem 1.4rem;
+}
+
+.inner-page .contact-card .contact-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.inner-page .contact-card p {
+  grid-column: 1 / 3;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.inner-page .contact-card .button {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  margin: 0;
+}
+
+.inner-page .sitemap-list {
+  max-width: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35rem 1.5rem;
+}
+
 .sitemap-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1578,6 +1910,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .inner-page .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .benefits-list {
     grid-column: 1 / -1;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1594,6 +1930,46 @@ h3 {
   .footer-contacts {
     grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .inner-page .catalog-grid,
+  .inner-page .faq-list,
+  .about-content-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-content-grid > .prose {
+    grid-column: 1 / -1;
+  }
+
+  .inner-page .service-detail-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .request-page .demo-form-request {
+    grid-template-columns: 1fr;
+  }
+
+  .request-page .request-card .form-fields,
+  .request-page .file-control,
+  .request-page .form-submit,
+  .request-page .form-status {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .inner-page .contact-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .inner-page .contact-card .contact-list,
+  .inner-page .contact-card p {
+    grid-column: 1;
+  }
+
+  .inner-page .contact-card .button {
+    grid-column: 2;
+    grid-row: 1 / 3;
   }
 }
 
@@ -1660,6 +2036,10 @@ h3 {
   .home-faq-list,
   .home-contacts-panel,
   .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inner-page .projects-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1738,6 +2118,43 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .inner-page .inner-hero-grid.has-image,
+  .inner-page .faq-list,
+  .about-content-grid,
+  .inner-page .contact-card,
+  .inner-page .sitemap-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content-grid > .prose {
+    grid-column: auto;
+  }
+
+  .inner-page .inner-thumbnail {
+    width: 100%;
+    max-width: 20rem;
+    justify-self: start;
+  }
+
+  .inner-page .inner-hero {
+    padding-bottom: 1rem;
+  }
+
+  .inner-page .project-card {
+    min-height: 13rem;
+  }
+
+  .inner-page .contact-card .contact-list,
+  .inner-page .contact-card p,
+  .inner-page .contact-card .button {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .inner-page .contact-card .contact-list {
+    grid-template-columns: 1fr;
+  }
+
   .inner-thumbnail {
     max-width: 26rem;
   }
@@ -1765,6 +2182,10 @@ h3 {
   }
 
   .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inner-page .catalog-grid {
     grid-template-columns: 1fr;
   }
 
