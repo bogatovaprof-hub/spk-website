@@ -1587,17 +1587,41 @@ h3 {
 
 .about-content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(15rem, 0.9fr));
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
   gap: 1rem;
 }
 
 .about-content-grid .info-card {
+  height: 100%;
   padding: 1rem 1.15rem;
 }
 
 .about-content-grid .info-card h2 {
   font-size: clamp(1.2rem, 1.65vw, 1.5rem);
+}
+
+.about-story {
+  grid-column: 1 / -1;
+}
+
+.about-story-copy {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+  margin-top: 0.75rem;
+  font-size: clamp(0.94rem, 1.08vw, 1rem);
+  line-height: 1.48;
+}
+
+.about-story-copy p {
+  margin: 0;
+}
+
+.about-consultation {
+  grid-column: 1 / -1;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-divider);
 }
 
 .inner-page .faq-list {
@@ -1938,8 +1962,8 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-content-grid > .prose {
-    grid-column: 1 / -1;
+  .about-story-copy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .inner-page .service-detail-flow {
@@ -2126,8 +2150,8 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .about-content-grid > .prose {
-    grid-column: auto;
+  .about-story-copy {
+    grid-template-columns: 1fr;
   }
 
   .inner-page .inner-thumbnail {

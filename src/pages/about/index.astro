@@ -8,11 +8,13 @@ import about from '../../data/about.json';
 <BaseLayout title={`${about.h1} — СПК ТРЕЙД`} description={about.intro} activeSection="about" bodyClass="about-page">
   <InnerHero title={about.h1} description={about.intro} image={about.image} />
   <section class="container content-section about-content-grid">
-    <div class="prose">
+    <article class="info-card about-story">
       <h2>О работе компании</h2>
-      {about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-      <p><strong>{about.consultation}</strong></p>
-    </div>
+      <div class="about-story-copy">
+        {about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        <p class="about-consultation"><strong>{about.consultation}</strong></p>
+      </div>
+    </article>
     <aside class="info-card">
       <h2>Основания и преимущества</h2>
       <ul class="plain-list">{about.facts.map((fact) => <li>{fact}</li>)}</ul>
