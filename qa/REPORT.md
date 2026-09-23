@@ -126,12 +126,12 @@ GitHub: `https://github.com/bogatovaprof-hub/spk-website`
 
 ## 7. Публикация
 
-Актуальная обзорная редакция главной опубликована 23.09.2026 workflow `Deploy prototype to GitHub Pages`:
+Актуальная сокращённая редакция главной опубликована 23.09.2026 workflow `Deploy prototype to GitHub Pages`:
 
-- исходный коммит сайта: `3b7435d`;
-- запуск: `https://github.com/bogatovaprof-hub/spk-website/actions/runs/35834155805`;
+- исходный коммит сайта: `d881f53`;
+- запуск: `https://github.com/bogatovaprof-hub/spk-website/actions/runs/35836157450`;
 - шаги `build` и `deploy`: `success`;
-- главная, `/about/`, `/faq/` и `/contacts/`: HTTP 200;
-- опубликованная главная содержит пять обзорных секций и имеет высоту 1813 px при viewport 1366 × 768 px;
-- полные блоки компании, FAQ и контактов на главной отсутствуют, но их отдельные страницы доступны;
+- главная, `/services/`, `/individualnoe-stroitelstvo/` и `/apk/`: HTTP 200;
+- опубликованная главная содержит три смысловые секции и имеет высоту 1138 px при viewport 1366 × 768 px;
+- каталог услуг и специальные направления на главной отсутствуют, но их отдельные страницы доступны;
 - изображения опубликованной главной загрузились без ошибок.
