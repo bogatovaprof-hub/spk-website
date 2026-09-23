@@ -6,10 +6,32 @@ import services from '../../data/services.json';
 import objects from '../../data/objects.json';
 import { withBase } from '../../lib/urls';
 
-type Service = (typeof services)[number];
+interface ServiceSection {
+  heading: string;
+  paragraphs: string[];
+  bullets: string[];
+}
+
+interface Service {
+  id: string;
+  slug: string;
+  title: string;
+  h1: string;
+  seoTitle: string;
+  seoDescription: string;
+  text: string;
+  image: string | null;
+  href: string;
+  primaryCta: string;
+  secondaryCta: string;
+  sections: ServiceSection[];
+}
+
+const servicePages = services as Service[];
 
 export function getStaticPaths() {
-  return services.map((service) => ({
+  const staticServices = services as Service[];
+  return staticServices.map((service) => ({
     params: { slug: service.slug },
     props: { service }
   }));
@@ -22,9 +44,9 @@ interface Props {
 const { service } = Astro.props;
 const showing = service.id === 'industrial' ? objects : [];
 const related = service.id === 'industrial-floors'
-  ? services.find((item) => item.id === 'polymer-floors')
+  ? servicePages.find((item) => item.id === 'polymer-floors')
   : service.id === 'polymer-floors'
-    ? services.find((item) => item.id === 'industrial-floors')
+    ? servicePages.find((item) => item.id === 'industrial-floors')
     : undefined;
 ---
 
@@ -52,6 +74,18 @@ const related = service.id === 'industrial-floors'
           <a class="related-link" href={withBase(related.href)}>Подробнее <span aria-hidden="true">→</span></a>
         </aside>
       )}
+    </section>
+  )}
+
+  {service.sections.length > 0 && (
+    <section class="container content-section service-detail-flow" aria-label="Подробности услуги">
+      {service.sections.map((section) => (
+        <div class="service-detail-section prose">
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          {section.bullets.length > 0 && <ul>{section.bullets.map((item) => <li>{item}</li>)}</ul>}
+        </div>
+      ))}
     </section>
   )}
 

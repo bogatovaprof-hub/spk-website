@@ -1,0 +1,26 @@
+---
+import about from '../data/about.json';
+import { withBase } from '../lib/urls';
+---
+
+<section class="home-about-section container" aria-labelledby="home-about-title">
+  <div class="section-heading-row">
+    <h2 id="home-about-title">{about.h1}</h2>
+    <a href={withBase('/about/')}>Подробнее о компании <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="home-about-grid">
+    <div class="home-about-copy">
+      <p>{about.intro}</p>
+      <p>{about.paragraphs[1]}</p>
+      <p class="home-about-consultation"><strong>{about.consultation}</strong></p>
+    </div>
+    <div class="home-about-list">
+      <h3>Опыт и команда</h3>
+      <ul>{about.facts.map((fact) => <li>{fact}</li>)}</ul>
+    </div>
+    <div class="home-about-list">
+      <h3>Наш подход</h3>
+      <ul>{about.advantages.map((advantage) => <li>{advantage}</li>)}</ul>
+    </div>
+  </div>
+</section>

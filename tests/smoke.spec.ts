@@ -170,6 +170,8 @@ test('сохраняются контрольные снимки', async ({ page
     { route: '/', width: 360, height: 800, name: 'home-360.png' },
     { route: '/services/', width: 1440, height: 1000, name: 'services-1440.png' },
     { route: '/services/promyshlennye-poly/', width: 390, height: 844, name: 'service-detail-390.png' },
+    { route: '/services/montazh-oborudovaniya/', width: 1440, height: 1000, name: 'service-equipment-1440.png' },
+    { route: '/projects/', width: 1440, height: 1000, name: 'projects-1440.png' },
     { route: '/individualnoe-stroitelstvo/', width: 1440, height: 1000, name: 'individual-1440.png' },
     { route: '/apk/', width: 1440, height: 1000, name: 'apk-1440.png' }
   ];

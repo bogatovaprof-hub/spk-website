@@ -1,6 +1,7 @@
 ---
 import site from '../data/site.json';
-import { imageUrl, withBase } from '../lib/urls';
+import BrandLogo from './BrandLogo.astro';
+import { withBase } from '../lib/urls';
 
 interface Props {
   activeSection?: string;
@@ -13,7 +14,7 @@ const sectionFor = (href: string) => href === '/' ? 'home' : href.split('/').fil
 <header class="site-header" data-site-header>
   <div class="container header-inner">
     <a class="brand" href={withBase('/')} aria-label="СПК ТРЕЙД — на главную">
-      <img src={imageUrl('logo-header')} width="79" height="57" alt="СПК ТРЕЙД" />
+      <BrandLogo className="brand-logo-header" />
     </a>
 
     <nav class="desktop-nav" aria-label="Основная навигация">
@@ -95,4 +96,3 @@ const sectionFor = (href: string) => href === '/' ? 'home' : href.split('/').fil
     });
   })();
 </script>
-

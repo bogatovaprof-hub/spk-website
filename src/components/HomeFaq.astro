@@ -1,0 +1,19 @@
+---
+import faq from '../data/faq.json';
+import { withBase } from '../lib/urls';
+---
+
+<section class="home-faq-section container" aria-labelledby="home-faq-title">
+  <div class="section-heading-row">
+    <h2 id="home-faq-title">Частые вопросы</h2>
+    <a href={withBase('/faq/')}>Все вопросы <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="faq-list home-faq-list">
+    {faq.map((item, index) => (
+      <details class="faq-item" open={index === 0}>
+        <summary>{item.question}</summary>
+        <div class="faq-answer"><p>{item.answer}</p></div>
+      </details>
+    ))}
+  </div>
+</section>

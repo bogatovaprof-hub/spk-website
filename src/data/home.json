@@ -29,23 +29,23 @@
   },
   "facts": [
     {
-      "value": "35+",
-      "label": "лет на рынке",
+      "value": "35+ лет",
+      "label": "опыта руководителя\nв строительном бизнесе",
       "icon": "icon-hardhat"
     },
     {
       "value": "20 лет",
-      "label": "работаем командой",
+      "label": "работаем слаженной\nкомандой",
       "icon": "icon-team"
     },
     {
-      "value": "Свое",
-      "label": "оборудование\nи склад",
+      "value": "Собственный",
+      "label": "парк техники\nи оборудования",
       "icon": "icon-equipment"
     },
     {
       "value": "Проекты",
-      "label": "по всей России\nи СНГ",
+      "label": "реализуем\nпо всей России",
       "icon": "icon-location"
     }
   ],
@@ -54,7 +54,7 @@
   "servicesAllHref": "/services/",
   "cards": [
     {
-      "title": "Промышленное строительство",
+      "title": "Промышленное строительство под ключ",
       "image": "service-industrial",
       "href": "/services/promyshlennoe-stroitelstvo/"
     },

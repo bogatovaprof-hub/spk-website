@@ -1,27 +1,31 @@
-/* SPK TRADE · prototype v1.0. Design reconstruction, not original Figma tokens.
-   The approved PNG is the visual authority. All values are adjustable here.
+/* SPK TRADE · client revision 2026-09-23.
+   The supplied brand palette and logo are the current visual authority.
    Font binaries are intentionally NOT included in this kit. */
 :root {
   color-scheme: light;
   --color-white: #ffffff;
-  --color-page: #fafcfe;
-  --color-surface: #f4f8fc;
-  --color-panel: #f0f5fa;
-  --color-heading: #08152f;
-  --color-text: #344863;
-  --color-muted: #64748b;
-  --color-border: #dbe5f0;
-  --color-divider: #d5e1ef;
-  --color-primary: #006ce8;
-  --color-primary-top: #0672ef;
-  --color-primary-bottom: #0063e0;
-  --color-primary-hover: #005aca;
-  --color-link: #075fc7;
-  --color-focus: #075fc7;
+  --color-page: #f7f7f4;
+  --color-surface: #e9ecec;
+  --color-panel: #f0f1ee;
+  --color-heading: #252a2d;
+  --color-heading-secondary: #343a3d;
+  --color-text: #343a3d;
+  --color-muted: #7c8285;
+  --color-border: #d6d9d8;
+  --color-divider: #cfd3d3;
+  --color-brand: #164264;
+  --color-brand-deep: #143f5e;
+  --color-primary: #b77a4b;
+  --color-primary-top: #a2673f;
+  --color-primary-bottom: #8f552f;
+  --color-primary-hover: #9c623b;
+  --color-accent-light: #d2a173;
+  --color-link: #9c623b;
+  --color-focus: #164264;
   --color-danger: #b42318;
   --color-success: #166534;
   --gradient-primary: linear-gradient(180deg, var(--color-primary-top), var(--color-primary-bottom));
-  --gradient-hero: linear-gradient(90deg, #fafcfe 0%, #f5faff 39%, #eaf5ff 100%);
+  --gradient-hero: linear-gradient(90deg, #f7f7f4 0%, #f2f3f1 43%, #e9ecec 100%);
   --font-sans: 'Roboto Variable', 'Roboto', Arial, sans-serif;
   --font-weight-body: 400;
   --font-weight-label: 500;
@@ -54,8 +58,8 @@
   --section-gap: clamp(1.25rem, 2vw, 2rem);
   --header-height: clamp(4rem, 5.7vw, 5rem);
   --control-height: 2.75rem;
-  --shadow-card: 0 1px 4px rgb(14 40 78 / 5%);
-  --shadow-hover: 0 5px 16px rgb(14 40 78 / 9%);
+  --shadow-card: 0 1px 4px rgb(37 42 45 / 6%);
+  --shadow-hover: 0 5px 16px rgb(37 42 45 / 12%);
   --transition-fast: 160ms ease;
   --z-header: 20;
   --z-dialog: 100;

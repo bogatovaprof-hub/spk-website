@@ -1,0 +1,20 @@
+---
+import pages from '../data/pages.json';
+import site from '../data/site.json';
+import { withBase } from '../lib/urls';
+---
+
+<section class="home-contacts-section container" aria-labelledby="home-contacts-title">
+  <div class="home-contacts-panel">
+    <div>
+      <p class="eyebrow">СВЯЗАТЬСЯ С НАМИ</p>
+      <h2 id="home-contacts-title">{pages.contacts.h1}</h2>
+      <p>{pages.contacts.unconfirmedText}</p>
+    </div>
+    <dl class="home-contact-list">
+      <div><dt>{pages.contacts.phoneLabel}</dt><dd>{site.contacts.phoneDisplay}</dd></div>
+      <div><dt>{pages.contacts.emailLabel}</dt><dd>{site.contacts.emailDisplay}</dd></div>
+    </dl>
+    <a class="button button-primary" href={withBase('/request/')}>{pages.contacts.primaryCta}</a>
+  </div>
+</section>

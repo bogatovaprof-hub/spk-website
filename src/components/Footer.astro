@@ -1,13 +1,14 @@
 ---
 import site from '../data/site.json';
-import { iconUrl, imageUrl, withBase } from '../lib/urls';
+import BrandLogo from './BrandLogo.astro';
+import { withBase } from '../lib/urls';
 ---
 
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href={withBase('/')} aria-label="СПК ТРЕЙД — на главную">
-        <img src={imageUrl('logo-footer')} width="66" height="49" alt="СПК ТРЕЙД" loading="lazy" />
+        <BrandLogo className="brand-logo-footer" loading="lazy" />
       </a>
       <p>{site.footer.slogan}</p>
     </div>
@@ -15,9 +16,14 @@ import { iconUrl, imageUrl, withBase } from '../lib/urls';
       {site.footer.links.map((link) => <a href={withBase(link.href)}>{link.title}</a>)}
     </nav>
     <address class="footer-contacts">
-      <span><img src={iconUrl('icon-phone')} width="27" height="28" alt="" />{site.contacts.phoneDisplay}</span>
-      <span><img src={iconUrl('icon-mail')} width="24" height="24" alt="" />{site.contacts.emailDisplay}</span>
+      <span>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7.1 3.5 4.7 5.2c-.8.6-1.1 1.6-.8 2.6 1.7 5.9 6.3 10.5 12.2 12.2 1 .3 2-.1 2.6-.9l1.7-2.4-4.4-2-1.5 1.6c-2.7-1.1-4.9-3.3-6-6L10.1 9l-3-5.5Z" /></svg>
+        {site.contacts.phoneDisplay}
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
+        {site.contacts.emailDisplay}
+      </span>
     </address>
   </div>
 </footer>
-

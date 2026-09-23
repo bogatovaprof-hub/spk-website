@@ -1,0 +1,20 @@
+---
+import { withBase } from '../lib/urls';
+
+interface Props {
+  className?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { className = '', loading = 'eager' } = Astro.props;
+---
+
+<span class:list={['brand-logo', className]}>
+  <img
+    src={withBase('/images/logo-spk-client.png')}
+    width="1024"
+    height="1024"
+    alt="СПК ТРЕЙД"
+    loading={loading}
+  />
+</span>

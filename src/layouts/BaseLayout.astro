@@ -5,7 +5,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import ConsultationDialog from '../components/ConsultationDialog.astro';
 import Footer from '../components/Footer.astro';
-import { imageUrl } from '../lib/urls';
+import { withBase } from '../lib/urls';
 
 interface Props {
   title: string;
@@ -29,8 +29,8 @@ const {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, nofollow" />
-    <meta name="theme-color" content="#fafcfe" />
-    <link rel="icon" type="image/png" href={imageUrl('logo-header', 'png')} />
+    <meta name="theme-color" content="#f7f7f4" />
+    <link rel="icon" type="image/png" href={withBase('/images/logo-spk-client.png')} />
     <title>{title}</title>
   </head>
   <body class={bodyClass}>
