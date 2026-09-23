@@ -5,9 +5,6 @@ import Facts from '../components/Facts.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
 import LeadPanel from '../components/LeadPanel.astro';
 import Directions from '../components/Directions.astro';
-import HomeAbout from '../components/HomeAbout.astro';
-import HomeFaq from '../components/HomeFaq.astro';
-import HomeContacts from '../components/HomeContacts.astro';
 import home from '../data/home.json';
 import { withBase } from '../lib/urls';
 ---
@@ -22,9 +19,6 @@ import { withBase } from '../lib/urls';
     </div>
     <ServicesGrid cards={home.cards} />
   </section>
-  <HomeAbout />
   <LeadPanel />
   <Directions />
-  <HomeFaq />
-  <HomeContacts />
 </BaseLayout>
