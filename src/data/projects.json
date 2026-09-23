@@ -2,61 +2,73 @@
   {
     "title": "Цеха ГК «ГАЗ»",
     "location": null,
-    "work": "Реконструкция"
+    "work": "Реконструкция",
+    "image": "project-industrial"
   },
   {
     "title": "ООО «Флайг+Хоммель»",
     "location": "Заволжье",
-    "work": "Полный цикл работ"
+    "work": "Полный цикл работ",
+    "image": "project-industrial"
   },
   {
     "title": "ОАО «Нижегородские Сорбенты»",
     "location": "Нижний Новгород",
-    "work": "Подготовка площадки и монтаж аппаратов высокого давления в цехе производства синтетических цеолитов"
+    "work": "Подготовка площадки и монтаж аппаратов высокого давления в цехе производства синтетических цеолитов",
+    "image": "project-process"
   },
   {
     "title": "Фабрика «Стора Энсо»",
     "location": "Арзамас",
-    "work": "Субподрядные работы по устройству фундаментов и полов"
+    "work": "Субподрядные работы по устройству фундаментов и полов",
+    "image": "project-production"
   },
   {
     "title": "Фабрика мороженого",
     "location": "Кстово",
-    "work": null
+    "work": null,
+    "image": "project-production"
   },
   {
     "title": "Стекольный завод",
     "location": "Бор",
-    "work": "Реконструкция печи и устройство фундаментов и полов"
+    "work": "Реконструкция печи и устройство фундаментов и полов",
+    "image": "project-process"
   },
   {
     "title": "Складской терминал Яндекс",
     "location": "Кстово",
-    "work": null
+    "work": null,
+    "image": "project-logistics"
   },
   {
     "title": "Гипермаркеты «Лента»",
     "location": "Нижний Новгород и Владимир",
-    "work": null
+    "work": null,
+    "image": "project-logistics"
   },
   {
     "title": "Гипермаркет «Глобус»",
     "location": "Владимирская область",
-    "work": null
+    "work": null,
+    "image": "project-logistics"
   },
   {
     "title": "Офисный и спортивный центр на площади Комсомольской",
     "location": "Нижний Новгород",
-    "work": "Полный цикл работ"
+    "work": "Полный цикл работ",
+    "image": "project-sports"
   },
   {
     "title": "Ледовая арена",
     "location": "Казань",
-    "work": null
+    "work": null,
+    "image": "project-sports"
   },
   {
     "title": "Бассейн",
     "location": "Нижний Новгород",
-    "work": "Реконструкция"
+    "work": "Реконструкция",
+    "image": "project-pool"
   }
 ]

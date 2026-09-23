@@ -4,6 +4,7 @@ import InnerHero from '../../components/InnerHero.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import pages from '../../data/pages.json';
 import projects from '../../data/projects.json';
+import { withBase } from '../../lib/urls';
 
 const page = pages.projects;
 ---
@@ -14,13 +15,28 @@ const page = pages.projects;
     <div class="projects-grid">
       {projects.map((project) => (
         <article class="project-card">
-          <p class="project-kicker">Проект</p>
-          <h2>{project.title}</h2>
-          {project.location && <p class="project-location">{project.location}</p>}
-          {project.work && <p class="project-work">{project.work}</p>}
+          <picture class="project-card-media" aria-hidden="true">
+            <source srcset={withBase(`/images/${project.image}.webp`)} type="image/webp" />
+            <img
+              src={withBase(`/images/${project.image}.png`)}
+              width="1200"
+              height="675"
+              alt=""
+              loading="lazy"
+            />
+          </picture>
+          <div class="project-card-content">
+            <p class="project-kicker">Проект</p>
+            <h2>{project.title}</h2>
+            {project.location && <p class="project-location">{project.location}</p>}
+            {project.work && <p class="project-work">{project.work}</p>}
+          </div>
         </article>
       ))}
     </div>
+    <p class="projects-visual-note">
+      Фотографии используются как иллюстративный фон и не являются документальной съёмкой указанных объектов.
+    </p>
   </section>
   <CallToAction secondaryLabel={page.primaryCta} />
 </BaseLayout>
