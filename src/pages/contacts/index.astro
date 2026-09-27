@@ -3,19 +3,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import InnerHero from '../../components/InnerHero.astro';
 import pages from '../../data/pages.json';
 import site from '../../data/site.json';
+
+const mapUrl = 'https://yandex.ru/map-widget/v1/?ll=43.977167%2C56.324428&mode=search&oid=1071296582&ol=biz&z=15';
+const routeUrl = 'https://yandex.ru/maps/?mode=routes&rtext=~56.328437%2C44.003111&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1071296582';
 ---
 
 <BaseLayout title="Контакты — СПК ТРЕЙД" description={pages.contacts.unconfirmedText} activeSection="contacts">
   <InnerHero title={pages.contacts.h1} description={pages.contacts.unconfirmedText} />
-  <section class="container content-section">
-    <div class="contact-card">
+  <section class="container content-section contacts-layout">
+    <div class="contact-card contact-card-stacked">
       <h2>{pages.contacts.companyLabel}</h2>
       <dl class="contact-list">
         <div><dt>{pages.contacts.phoneLabel}</dt><dd>{site.contacts.phoneDisplay}</dd></div>
         <div><dt>{pages.contacts.emailLabel}</dt><dd>{site.contacts.emailDisplay}</dd></div>
+        <div><dt>{pages.contacts.addressLabel}</dt><dd>{pages.contacts.addressDisplay}</dd></div>
       </dl>
       <p>{site.ui.contactUnconfirmed}</p>
       <button class="button button-primary" type="button" data-dialog-open>{pages.contacts.primaryCta}</button>
+    </div>
+    <div class="map-card">
+      <iframe
+        src={mapUrl}
+        title={pages.contacts.mapTitle}
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+      <div class="map-card-footer">
+        <div>
+          <strong>{pages.contacts.addressDisplay}</strong>
+          <span>Временная точка для согласования макета</span>
+        </div>
+        <a class="button button-secondary" href={routeUrl} target="_blank" rel="noopener noreferrer">
+          {pages.contacts.routeCta}<span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

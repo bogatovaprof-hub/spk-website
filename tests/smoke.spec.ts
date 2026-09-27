@@ -39,7 +39,12 @@ test('все маршруты открываются, имеют один H1, no
   const pageErrors: string[] = [];
   const failedRequests: string[] = [];
   page.on('pageerror', (error) => pageErrors.push(error.message));
-  page.on('requestfailed', (request) => failedRequests.push(`${request.method()} ${request.url()}`));
+  page.on('requestfailed', (request) => {
+    const hostname = new URL(request.url()).hostname;
+    if (hostname === '127.0.0.1' || hostname === 'localhost') {
+      failedRequests.push(`${request.method()} ${request.url()}`);
+    }
+  });
 
   for (const route of routes) {
     const response = await page.goto(route, { waitUntil: 'networkidle' });
@@ -67,12 +72,12 @@ test('контрольные ширины не дают горизонтальн
     { width: 1122, height: 900 },
     { width: 1440, height: 1000 }
   ];
-  const sampleRoutes = ['/', '/services/', '/services/promyshlennye-poly/', '/individualnoe-stroitelstvo/', '/apk/', '/request/'];
+  const sampleRoutes = ['/', '/services/', '/services/promyshlennoe-stroitelstvo/', '/services/promyshlennye-poly/', '/faq/', '/contacts/', '/individualnoe-stroitelstvo/', '/apk/', '/request/'];
 
   for (const viewport of viewports) {
     await page.setViewportSize(viewport);
     for (const route of sampleRoutes) {
-      await page.goto(route, { waitUntil: 'networkidle' });
+      await page.goto(route, { waitUntil: 'domcontentloaded' });
       await expectNoHorizontalOverflow(page);
     }
   }
@@ -160,6 +165,70 @@ test('FAQ раскрывается, а ссылки не используют з
   expect(badLinks).toEqual([]);
 });
 
+test('клиентские правки услуг, FAQ и контактов отражены в интерфейсе', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#services-title')).toHaveText('Наши услуги');
+  await expect(page.locator('.services-section .service-card')).toHaveCount(8);
+
+  await page.goto('/services/promyshlennye-poly/');
+  await expect(page.getByText('Связанная услуга', { exact: true })).toHaveCount(0);
+
+  await page.goto('/services/sendvich-paneli/');
+  await expect(page.getByRole('heading', { name: 'Комплексный подход', exact: true })).toHaveCount(0);
+
+  await page.goto('/services/montazh-oborudovaniya/');
+  const serviceLayout = await page.locator('.service-detail-flow').evaluate((flow) => {
+    const lastCard = flow.lastElementChild?.getBoundingClientRect();
+    const flowBox = flow.getBoundingClientRect();
+    return lastCard ? { flowWidth: flowBox.width, cardWidth: lastCard.width } : null;
+  });
+  expect(serviceLayout).not.toBeNull();
+  expect(Math.abs(serviceLayout!.flowWidth - serviceLayout!.cardWidth)).toBeLessThanOrEqual(1);
+
+  await page.goto('/faq/');
+  const faqColumns = await page.locator('.faq-list').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length);
+  expect(faqColumns).toBe(1);
+
+  await page.goto('/contacts/');
+  await expect(page.getByText('Нижний Новгород, Кремль', { exact: true }).first()).toBeVisible();
+  await expect(page.locator('.map-card iframe')).toHaveAttribute('src', /yandex\.ru\/map-widget/);
+  await expect(page.getByRole('link', { name: /Построить маршрут/ })).toHaveAttribute('href', /yandex\.ru\/maps/);
+});
+
+test('основные контейнеры внутренних страниц выровнены по общей сетке', async ({ page }) => {
+  const cases = [
+    '/services/promyshlennoe-stroitelstvo/',
+    '/services/proektirovanie/',
+    '/services/metallokonstruktsii/',
+    '/services/promyshlennye-poly/',
+    '/services/polimernye-poly/',
+    '/services/monolitnye-raboty/',
+    '/services/fasady/',
+    '/services/sendvich-paneli/',
+    '/services/montazh-oborudovaniya/',
+    '/services/gidroizolyatsiya/',
+    '/faq/',
+    '/contacts/'
+  ];
+
+  for (const width of [360, 390, 768, 1122, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of cases) {
+      await page.goto(route, { waitUntil: 'domcontentloaded' });
+      const bounds = await page.locator('main').evaluate((main) => {
+        const hero = main.querySelector('.inner-hero > .container')?.getBoundingClientRect();
+        const containers = [...main.querySelectorAll(':scope > .container')].map((element) => element.getBoundingClientRect());
+        return hero ? { hero: { left: hero.left, right: hero.right }, containers: containers.map(({ left, right }) => ({ left, right })) } : null;
+      });
+      expect(bounds, route).not.toBeNull();
+      for (const box of bounds?.containers ?? []) {
+        expect(Math.abs(box.left - bounds!.hero.left), `${route} @ ${width}px: left`).toBeLessThanOrEqual(1);
+        expect(Math.abs(box.right - bounds!.hero.right), `${route} @ ${width}px: right`).toBeLessThanOrEqual(1);
+      }
+    }
+  }
+});
+
 test('сохраняются контрольные снимки', async ({ page }) => {
   const outputDir = path.resolve('qa/screenshots');
   await fs.mkdir(outputDir, { recursive: true });
@@ -171,6 +240,8 @@ test('сохраняются контрольные снимки', async ({ page
     { route: '/services/', width: 1440, height: 1000, name: 'services-1440.png' },
     { route: '/services/promyshlennye-poly/', width: 390, height: 844, name: 'service-detail-390.png' },
     { route: '/services/montazh-oborudovaniya/', width: 1440, height: 1000, name: 'service-equipment-1440.png' },
+    { route: '/faq/', width: 1440, height: 1000, name: 'faq-1440.png' },
+    { route: '/contacts/', width: 1440, height: 1000, name: 'contacts-1440.png' },
     { route: '/projects/', width: 1440, height: 1000, name: 'projects-1440.png' },
     { route: '/individualnoe-stroitelstvo/', width: 1440, height: 1000, name: 'individual-1440.png' },
     { route: '/apk/', width: 1440, height: 1000, name: 'apk-1440.png' }

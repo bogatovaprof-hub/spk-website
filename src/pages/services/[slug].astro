@@ -4,10 +4,10 @@ import InnerHero from '../../components/InnerHero.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import services from '../../data/services.json';
 import objects from '../../data/objects.json';
-import { withBase } from '../../lib/urls';
 
 interface ServiceSection {
   heading: string;
+  hideHeading?: boolean;
   paragraphs: string[];
   bullets: string[];
 }
@@ -27,8 +27,6 @@ interface Service {
   sections: ServiceSection[];
 }
 
-const servicePages = services as Service[];
-
 export function getStaticPaths() {
   const staticServices = services as Service[];
   return staticServices.map((service) => ({
@@ -43,11 +41,6 @@ interface Props {
 
 const { service } = Astro.props;
 const showing = service.id === 'industrial' ? objects : [];
-const related = service.id === 'industrial-floors'
-  ? servicePages.find((item) => item.id === 'polymer-floors')
-  : service.id === 'polymer-floors'
-    ? servicePages.find((item) => item.id === 'industrial-floors')
-    : undefined;
 ---
 
 <BaseLayout title={service.seoTitle} description={service.seoDescription} activeSection="services">
@@ -58,22 +51,13 @@ const related = service.id === 'industrial-floors'
     parent={{ title: 'Услуги', href: '/services/' }}
   />
 
-  {(showing.length > 0 || related) && (
-    <section class="container content-section two-column-content">
-      {showing.length > 0 && (
-        <div class="prose">
-          <h2>Какие объекты мы строим?</h2>
-          <p>Работаем с промышленными и коммерческими объектами:</p>
-          <ul>{showing.map((item) => <li>{item}</li>)}</ul>
-        </div>
-      )}
-      {related && (
-        <aside class="info-card">
-          <h2>Связанная услуга</h2>
-          <p>{related.title}</p>
-          <a class="related-link" href={withBase(related.href)}>Подробнее <span aria-hidden="true">→</span></a>
-        </aside>
-      )}
+  {showing.length > 0 && (
+    <section class="container content-section service-overview">
+      <div class="prose">
+        <h2>Какие объекты мы строим?</h2>
+        <p>Работаем с промышленными и коммерческими объектами:</p>
+        <ul>{showing.map((item) => <li>{item}</li>)}</ul>
+      </div>
     </section>
   )}
 
@@ -81,7 +65,7 @@ const related = service.id === 'industrial-floors'
     <section class="container content-section service-detail-flow" aria-label="Подробности услуги">
       {service.sections.map((section) => (
         <div class="service-detail-section prose">
-          <h2>{section.heading}</h2>
+          {!section.hideHeading && <h2>{section.heading}</h2>}
           {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
           {section.bullets.length > 0 && <ul>{section.bullets.map((item) => <li>{item}</li>)}</ul>}
         </div>

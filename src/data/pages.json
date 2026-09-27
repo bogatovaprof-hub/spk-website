@@ -59,6 +59,10 @@
     "companyLabel": "СПК ТРЕЙД",
     "phoneLabel": "Телефон",
     "emailLabel": "Электронная почта",
+    "addressLabel": "Адрес (временно для макета)",
+    "addressDisplay": "Нижний Новгород, Кремль",
+    "mapTitle": "Карта: Нижний Новгород, Кремль",
+    "routeCta": "Построить маршрут в Яндекс Картах",
     "unconfirmedText": "Контакты в прототипе приведены для проверки оформления. Рабочие данные будут добавлены после подтверждения.",
     "primaryCta": "Оставить заявку",
     "origin": "prototype-placeholder; displayed phone/email from approved-image"
