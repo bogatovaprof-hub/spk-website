@@ -18,9 +18,13 @@ const page = pages.projects;
           <picture class="project-card-media" aria-hidden="true">
             <source srcset={withBase(`/images/${project.image}.webp`)} type="image/webp" />
             <img
-              src={withBase(`/images/${project.image}.png`)}
-              width="1200"
-              height="675"
+              src={withBase(`/images/${project.image}.jpg`)}
+              width={project.imageWidth}
+              height={project.imageHeight}
+              class:list={{
+                'project-photo-collage': project.image === 'projects/nizhegorodskie-sorbenty',
+                'project-photo-left': ['projects/globus', 'projects/lenta'].includes(project.image)
+              }}
               alt=""
               loading="lazy"
             />
@@ -35,7 +39,7 @@ const page = pages.projects;
       ))}
     </div>
     <p class="projects-visual-note">
-      Фотографии используются как иллюстративный фон и не являются документальной съёмкой указанных объектов.
+      Фотографии объектов предоставлены заказчиком.
     </p>
   </section>
   <CallToAction secondaryLabel={page.primaryCta} />

@@ -1192,12 +1192,21 @@ h3 {
   height: 100%;
   object-fit: cover;
   object-position: center right;
+  filter: saturate(0.85) contrast(0.98);
 }
 
 .project-card-content {
   position: relative;
   z-index: 2;
   max-width: 74%;
+}
+
+.project-card-media img.project-photo-collage {
+  object-fit: contain;
+}
+
+.project-card-media img.project-photo-left {
+  object-position: left center;
 }
 
 .project-kicker,

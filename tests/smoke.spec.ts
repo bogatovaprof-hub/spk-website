@@ -14,7 +14,6 @@ const routes = [
   '/services/fasady/',
   '/services/sendvich-paneli/',
   '/services/montazh-oborudovaniya/',
-  '/services/gidroizolyatsiya/',
   '/individualnoe-stroitelstvo/',
   '/apk/',
   '/about/',
@@ -60,6 +59,11 @@ test('все маршруты открываются, имеют один H1, no
     expect(brokenImages, route).toEqual([]);
   }
 
+  await page.goto('/services/');
+  await expect(page.locator('.catalog-grid .service-card')).toHaveCount(9);
+  await expect(page.locator('main a[href*="gidroizolyatsiya"]')).toHaveCount(0);
+  const removedService = await page.goto('/services/gidroizolyatsiya/');
+  expect(removedService?.status()).toBe(404);
   expect(pageErrors).toEqual([]);
   expect(failedRequests).toEqual([]);
 });
@@ -206,7 +210,6 @@ test('основные контейнеры внутренних страниц 
     '/services/fasady/',
     '/services/sendvich-paneli/',
     '/services/montazh-oborudovaniya/',
-    '/services/gidroizolyatsiya/',
     '/faq/',
     '/contacts/'
   ];

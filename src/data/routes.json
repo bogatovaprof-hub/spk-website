@@ -66,12 +66,6 @@
     "status": "source-content"
   },
   {
-    "path": "/services/gidroizolyatsiya/",
-    "title": "Гидроизоляция",
-    "template": "ServiceDetail",
-    "status": "source-content"
-  },
-  {
     "path": "/individualnoe-stroitelstvo/",
     "title": "Индивидуальное строительство",
     "template": "Direction",

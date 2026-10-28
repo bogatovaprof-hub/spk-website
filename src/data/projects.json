@@ -3,72 +3,96 @@
     "title": "Цеха ГК «ГАЗ»",
     "location": null,
     "work": "Реконструкция",
-    "image": "project-industrial"
+    "image": "projects/gaz",
+    "imageWidth": 1200,
+    "imageHeight": 628
   },
   {
     "title": "ООО «Флайг+Хоммель»",
     "location": "Заволжье",
     "work": "Полный цикл работ",
-    "image": "project-industrial"
+    "image": "projects/flaig-hommel",
+    "imageWidth": 1536,
+    "imageHeight": 1024
   },
   {
     "title": "ОАО «Нижегородские Сорбенты»",
     "location": "Нижний Новгород",
     "work": "Подготовка площадки и монтаж аппаратов высокого давления в цехе производства синтетических цеолитов",
-    "image": "project-process"
+    "image": "projects/nizhegorodskie-sorbenty",
+    "imageWidth": 1000,
+    "imageHeight": 1000
   },
   {
     "title": "Фабрика «Стора Энсо»",
     "location": "Арзамас",
     "work": "Субподрядные работы по устройству фундаментов и полов",
-    "image": "project-production"
+    "image": "projects/stora-enso",
+    "imageWidth": 800,
+    "imageHeight": 533
   },
   {
     "title": "Фабрика мороженого",
     "location": "Кстово",
     "work": null,
-    "image": "project-production"
+    "image": "projects/ice-cream-factory",
+    "imageWidth": 500,
+    "imageHeight": 240
   },
   {
     "title": "Стекольный завод",
     "location": "Бор",
     "work": "Реконструкция печи и устройство фундаментов и полов",
-    "image": "project-process"
+    "image": "projects/bor-glass-factory",
+    "imageWidth": 518,
+    "imageHeight": 480
   },
   {
     "title": "Складской терминал Яндекс",
     "location": "Кстово",
     "work": null,
-    "image": "project-logistics"
+    "image": "projects/yandex-kstovo",
+    "imageWidth": 1600,
+    "imageHeight": 720
   },
   {
     "title": "Гипермаркеты «Лента»",
     "location": "Нижний Новгород и Владимир",
     "work": null,
-    "image": "project-logistics"
+    "image": "projects/lenta",
+    "imageWidth": 1200,
+    "imageHeight": 599
   },
   {
     "title": "Гипермаркет «Глобус»",
     "location": "Владимирская область",
     "work": null,
-    "image": "project-logistics"
+    "image": "projects/globus",
+    "imageWidth": 1199,
+    "imageHeight": 675
   },
   {
     "title": "Офисный и спортивный центр на площади Комсомольской",
     "location": "Нижний Новгород",
     "work": "Полный цикл работ",
-    "image": "project-sports"
+    "image": "projects/komsomolskaya-square",
+    "imageWidth": 1024,
+    "imageHeight": 550
   },
   {
     "title": "Ледовая арена",
     "location": "Казань",
     "work": null,
-    "image": "project-sports"
+    "image": "projects/kazan-arena",
+    "imageWidth": 874,
+    "imageHeight": 500
   },
   {
     "title": "Бассейн",
     "location": "Нижний Новгород",
     "work": "Реконструкция",
-    "image": "project-pool"
+    "image": "projects/pool-reconstruction",
+    "imageWidth": 968,
+    "imageHeight": 543
   }
 ]
