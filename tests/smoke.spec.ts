@@ -122,7 +122,7 @@ test('диалог возвращает фокус и демонстрацион
   await dialog.locator('input[name="name"]').fill('Ксения');
   await dialog.locator('input[name="phone"]').fill('+7 900 000-00-00');
   await dialog.getByRole('button', { name: 'Заказать звонок' }).click();
-  await expect(dialog.locator('.form-status')).toHaveText('Проверка выполнена. Это прототип: заявка и файлы не отправлены.');
+  await expect(dialog.locator('.form-status')).toHaveText('Проверка выполнена. Заявка и файлы не отправлены.');
   expect(nonGetRequests).toEqual([]);
 });
 
@@ -139,7 +139,7 @@ test('полная форма проверяет e-mail и тип файла, с
   });
   await form.getByRole('button', { name: 'Отправить проект на расчет' }).click();
   await expect(form.locator('[data-error-for="email"]')).toHaveText('Проверьте адрес электронной почты.');
-  await expect(form.locator('[data-file-error]')).toHaveText('Этот формат файла не поддерживается в прототипе.');
+  await expect(form.locator('[data-file-error]')).toHaveText('Этот формат файла не поддерживается.');
   await expect(form.locator('input[name="name"]')).toHaveValue('Ксения');
 
   await form.locator('input[name="email"]').fill('test@example.com');
@@ -149,7 +149,7 @@ test('полная форма проверяет e-mail и тип файла, с
     buffer: Buffer.from('demo')
   });
   await form.getByRole('button', { name: 'Отправить проект на расчет' }).click();
-  await expect(form.locator('.form-status')).toHaveText('Проверка выполнена. Это прототип: заявка и файлы не отправлены.');
+  await expect(form.locator('.form-status')).toHaveText('Проверка выполнена. Заявка и файлы не отправлены.');
   await expect(form.locator('.file-list li')).toHaveCount(1);
   await form.getByRole('button', { name: /Удалить файл техническое-задание\.pdf/ }).click();
   await expect(form.locator('.file-list li')).toHaveCount(0);
@@ -194,9 +194,9 @@ test('клиентские правки услуг, FAQ и контактов о
   expect(faqColumns).toBe(1);
 
   await page.goto('/contacts/');
-  await expect(page.getByText('Нижний Новгород, Кремль', { exact: true }).first()).toBeVisible();
+  await expect(page.getByText('Адрес уточняется', { exact: true }).first()).toBeVisible();
   await expect(page.locator('.map-card iframe')).toHaveAttribute('src', /yandex\.ru\/map-widget/);
-  await expect(page.getByRole('link', { name: /Построить маршрут/ })).toHaveAttribute('href', /yandex\.ru\/maps/);
+  await expect(page.getByRole('link', { name: /Открыть Яндекс Карты/ })).toHaveAttribute('href', /yandex\.ru\/maps/);
 });
 
 test('основные контейнеры внутренних страниц выровнены по общей сетке', async ({ page }) => {

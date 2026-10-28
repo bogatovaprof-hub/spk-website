@@ -59,17 +59,18 @@
     "companyLabel": "СПК ТРЕЙД",
     "phoneLabel": "Телефон",
     "emailLabel": "Электронная почта",
-    "addressLabel": "Адрес (временно для макета)",
-    "addressDisplay": "Нижний Новгород, Кремль",
-    "mapTitle": "Карта: Нижний Новгород, Кремль",
-    "routeCta": "Построить маршрут в Яндекс Картах",
-    "unconfirmedText": "Контакты в прототипе приведены для проверки оформления. Рабочие данные будут добавлены после подтверждения.",
+    "addressLabel": "Адрес",
+    "addressDisplay": "Адрес уточняется",
+    "mapTitle": "Карта Нижнего Новгорода",
+    "routeCta": "Открыть Яндекс Карты",
+    "unconfirmedText": "Адрес и контактные данные уточняются.",
     "primaryCta": "Оставить заявку",
-    "origin": "prototype-placeholder; displayed phone/email from approved-image"
+    "origin": "prototype-placeholder; displayed phone/email from approved-image",
+    "mapLabel": "Нижний Новгород"
   },
   "privacy": {
     "h1": "Политика конфиденциальности",
-    "text": "Служебная страница прототипа. Утвержденный текст политики будет добавлен перед подключением отправки заявок. В текущем прототипе формы не передают введенные данные и выбранные файлы.",
+    "text": "Формы на сайте не передают введённые данные и выбранные файлы. Отправка заявок через сайт пока недоступна.",
     "origin": "prototype-placeholder-not-legal-document"
   },
   "sitemap": {

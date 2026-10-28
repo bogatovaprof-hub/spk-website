@@ -5,7 +5,7 @@ import pages from '../../data/pages.json';
 import site from '../../data/site.json';
 
 const mapUrl = 'https://yandex.ru/map-widget/v1/?ll=43.977167%2C56.324428&mode=search&oid=1071296582&ol=biz&z=15';
-const routeUrl = 'https://yandex.ru/maps/?mode=routes&rtext=~56.328437%2C44.003111&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1071296582';
+const routeUrl = 'https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.977167%2C56.324428&z=15';
 ---
 
 <BaseLayout title="Контакты — СПК ТРЕЙД" description={pages.contacts.unconfirmedText} activeSection="contacts">
@@ -18,7 +18,6 @@ const routeUrl = 'https://yandex.ru/maps/?mode=routes&rtext=~56.328437%2C44.0031
         <div><dt>{pages.contacts.emailLabel}</dt><dd>{site.contacts.emailDisplay}</dd></div>
         <div><dt>{pages.contacts.addressLabel}</dt><dd>{pages.contacts.addressDisplay}</dd></div>
       </dl>
-      <p>{site.ui.contactUnconfirmed}</p>
       <button class="button button-primary" type="button" data-dialog-open>{pages.contacts.primaryCta}</button>
     </div>
     <div class="map-card">
@@ -30,8 +29,8 @@ const routeUrl = 'https://yandex.ru/maps/?mode=routes&rtext=~56.328437%2C44.0031
       ></iframe>
       <div class="map-card-footer">
         <div>
-          <strong>{pages.contacts.addressDisplay}</strong>
-          <span>Временная точка для согласования макета</span>
+          <strong>{pages.contacts.mapLabel}</strong>
+          <span>{pages.contacts.addressDisplay}</span>
         </div>
         <a class="button button-secondary" href={routeUrl} target="_blank" rel="noopener noreferrer">
           {pages.contacts.routeCta}<span aria-hidden="true">↗</span>

@@ -1229,13 +1229,6 @@ h3 {
   margin-top: 0.75rem;
 }
 
-.projects-visual-note {
-  max-width: 58rem;
-  margin: 1.1rem 0 0;
-  color: var(--color-text-muted);
-  font-size: var(--font-small);
-}
-
 .prose {
   max-width: 52rem;
   font-size: clamp(1rem, 1.35vw, 1.125rem);
@@ -1705,10 +1698,6 @@ h3 {
   margin-top: 0.55rem;
   font-size: 0.9rem;
   line-height: 1.35;
-}
-
-.inner-page .projects-visual-note {
-  margin-top: 0.75rem;
 }
 
 .request-page .request-wrap {
